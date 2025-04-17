@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CookIt - Onboarding</title>
+  <link rel="stylesheet" href="../css/onboarding.css"/>
+  <style>
+    .onboarding-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .dot.active {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="onboarding-card">
+      <img src="../images/cooking_image.jpg" alt="Cooking Image" class="onboarding-img" />
+
+      <div class="text-section">
+        <h2 id="onboarding-title">WELCOME</h2>
+        <p id="onboarding-text">You can now cook your own food and master the art of cooking.</p>
+
+        <div class="indicator-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <div class="button-group">
+          <button class="next-btn" onclick="nextSlide()">Next</button>
+          <button class="skip-btn" onclick="window.location.href='login.html'">Skip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/onboarding.js"></script>
+</body>
+</html>
