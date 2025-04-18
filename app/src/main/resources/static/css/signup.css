@@ -1,4 +1,4 @@
-/* Global layout */
+/* Global Layout */
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #d2e1d9;
@@ -17,12 +17,30 @@ body {
   border-radius: 20px;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  box-sizing: border-box;
 }
 
 .signup-container h2 {
   margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Error Message Styling */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade-in animation for error */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Form Styling */
@@ -35,15 +53,22 @@ body {
 .signup-form input {
   width: 80%;
   padding: 13px;
-  margin: 10px 0;
+  margin: 8px 0;
   border-radius: 12px;
   border: 1px solid #ccc;
   font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.signup-form input:focus {
+  border-color: #333;
+  outline: none;
 }
 
 /* Button */
 .signup-btn {
-  width: 100%;
+  width: 85%;
   padding: 12px;
   border: none;
   border-radius: 12px;
@@ -52,6 +77,7 @@ body {
   font-size: 16px;
   margin-top: 10px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .signup-btn:hover {
@@ -62,4 +88,13 @@ body {
 .login-prompt {
   margin-top: 20px;
   font-size: 14px;
+}
+
+.login-prompt a {
+  color: #333;
+  text-decoration: none;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
 }

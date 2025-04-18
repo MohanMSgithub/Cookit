@@ -1,5 +1,18 @@
+const errorDiv = document.getElementById("errorMessage");
+
+function showError(message) {
+  errorDiv.textContent = message;
+  errorDiv.style.display = "block";
+}
+
+function clearError() {
+  errorDiv.textContent = "";
+  errorDiv.style.display = "none";
+}
+
 document.getElementById("signupForm").addEventListener("submit", async function (e) {
   e.preventDefault();
+  clearError();
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -7,19 +20,18 @@ document.getElementById("signupForm").addEventListener("submit", async function 
   const password = document.getElementById("password").value.trim();
   const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-  // Client-side validation
   if (!name || !email || !phone || !password || !confirmPassword) {
-    alert("Please fill in all fields.");
+    showError("Please fill in all fields.");
     return;
   }
 
   if (!/^\d{10}$/.test(phone)) {
-    alert("Phone number must be 10 digits.");
+    showError("Phone number must be 10 digits.");
     return;
   }
 
   if (password !== confirmPassword) {
-    alert("Passwords do not match.");
+    showError("Passwords do not match.");
     return;
   }
 
@@ -29,7 +41,6 @@ document.getElementById("signupForm").addEventListener("submit", async function 
     phoneNumber: phone,
     password
   };
-  
 
   try {
     const response = await fetch("http://localhost:8080/api/users/signup", {
@@ -41,13 +52,12 @@ document.getElementById("signupForm").addEventListener("submit", async function 
     const message = await response.text();
 
     if (response.ok && message === "Signup successful!") {
-      alert("Signup Successful!");
       window.location.href = "login.html";
     } else {
-      alert("Signup failed: " + message);
+      showError("Signup failed: " + message);
     }
   } catch (error) {
     console.error("Signup error:", error);
-    alert("Server error. Try again later.");
+    showError("Server error. Try again later.");
   }
 });

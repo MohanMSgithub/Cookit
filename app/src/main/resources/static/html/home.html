@@ -5,6 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CookIt - Home</title>
   <link rel="stylesheet" href="../css/home.css" />
+  <style>
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .carousel::-webkit-scrollbar { display: none; }
+    .carousel-card {
+      min-width: 25%;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .section {
+      margin: 2rem 0;
+      padding: 0 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .fan-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .banner {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .banner img {
+      width: 100%;
+      max-width: 1200px;
+      border-radius: 16px;
+    }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-card {
+    min-width: 80%;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .section {
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .fan-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .banner {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .banner img {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 16px;
+  }
+
+  /* Responsive Breakpoints */
+  @media (min-width: 600px) {
+    .carousel-card {
+      min-width: 50%;
+    }
+
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .carousel-card {
+      min-width: 33.333%;
+    }
+
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .carousel-card {
+      min-width: 25%;
+    }
+
+    .grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -13,9 +146,7 @@
       <img src="../images/logo-cookit.png" alt="CookIt Logo" class="logo"/>
       <a href="home.html" class="site-title">CookIt</a>
     </div>
-
     <input type="text" class="search-bar" placeholder="Search recipes or ingredients..." />
-
     <div class="nav-buttons">
       <div class="dropdown">
         <button class="nav-btn">Discover</button>
@@ -24,7 +155,6 @@
           <a href="#">Chef’s Picks</a>
         </div>
       </div>
-
       <div class="dropdown">
         <button class="nav-btn">Meal Plans</button>
         <div class="dropdown-content">
@@ -32,7 +162,6 @@
           <a href="#">Custom Plan</a>
         </div>
       </div>
-
       <div class="dropdown">
         <button class="nav-btn">Share</button>
         <div class="dropdown-content">
@@ -40,25 +169,26 @@
           <a href="#">Post Photo</a>
         </div>
       </div>
-
       <button class="signin-btn">My Recipes</button>
     </div>
   </header>
 
   <!-- Sub-navigation -->
-  <!-- Sub-navigation with Dropdowns -->
-<nav class="sub-nav">
+  <nav class="sub-nav">
+     
     <div class="dropdown">
-      <b class="nav-btn">Meals</b>
-      <a href="meals/breakfast.html">Breakfast</a>
-      <a href="meals/lunch.html">Lunch</a>
-      <a href="meals/healthy.html">Healthy</a>
-      <a href="meals/salads.html">Salads</a>
-      <a href="meals/dinner.html">Dinner</a>
-      <a href="meals/drinks.html">Drinks</a>
-      <a href="meals/dessert.html">Dessert</a>
+      <b class="nav-btn">meals</b>
+      <div class="dropdown-content">
+        <a href="#">Breakfast</a>
+        <a href="#">Lunch</a>
+        <a href="#">Healthy</a>
+        <a href="#">Salads</a>
+        <a href="#">Dinner</a>
+        <a href="#">Drinks</a>
+        <a href="#">Dessert</a>
+      </div>
     </div>
-  
+    
     <div class="dropdown">
       <b class="nav-btn">Ingredients</b>
       <div class="dropdown-content">
@@ -70,7 +200,6 @@
         <a href="#">Dosa</a>
       </div>
     </div>
-  
     <div class="dropdown">
       <b class="nav-btn">Cuisines</b>
       <div class="dropdown-content">
@@ -84,7 +213,6 @@
         <a href="#">Chinese</a>
       </div>
     </div>
-  
     <div class="dropdown">
       <b class="nav-btn">Occasions</b>
       <div class="dropdown-content">
@@ -97,23 +225,140 @@
       </div>
     </div>
     <div class="dropdown">
-        <b class="nav-btn">Seasonal</b>
-        <div class="dropdown-content">
-          <a href="#">summer</a>
-          <a href="#">winter</a>
-          <a href="#">rainy</a>
-          <a href="#">spring</a>
+      <b class="nav-btn">Seasonal</b>
+      <div class="dropdown-content">
+        <a href="#">Summer</a>
+        <a href="#">Winter</a>
+        <a href="#">Rainy</a>
+        <a href="#">Spring</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main >
+    <div class="main-content">
+      <h1 class="title">What’s Cooking?</h1>
+      <h2 class="subtitle">Explore delicious meals from around the world</h2>
+      <p class="description">Your 2025 curated recipe picks by food lovers</p>
+    </div>
+
+
+<!-- User Picks -->
+<section class="section">
+  <h2>User Picks</h2>
+  <div class="carousel">
+    <div class="carousel-card">User Card 1</div>
+    <div class="carousel-card">User Card 2</div>
+    <div class="carousel-card">User Card 3</div>
+    <div class="carousel-card">User Card 4</div>
+    <div class="carousel-card">User Card 5</div>
+    <div class="carousel-card">User Card 6</div>
+    <div class="carousel-card">User Card 7</div>
+    <div class="carousel-card">User Card 8</div>
+    <div class="carousel-card">User Card 9</div>
+    <div class="carousel-card">User Card 10</div>
+  </div>
+</section>
+
+<!-- Chef's Special -->
+<section class="section">
+  <h2>Chef's Special</h2>
+  <div class="carousel">
+    <div class="carousel-card">Special 1</div>
+    <div class="carousel-card">Special 2</div>
+    <div class="carousel-card">Special 3</div>
+    <div class="carousel-card">Special 4</div>
+    <div class="carousel-card">Special 5</div>
+  </div>
+</section>
+
+<!-- Fan Favourite -->
+<section class="section">
+  <h2>Fan Favourite</h2>
+  <div class="grid">
+    <!-- Repeat 20 fan cards -->
+    <div class="fan-card">Fan Favourite 1</div>
+    <div class="fan-card">Fan Favourite 2</div>
+    <div class="fan-card">Fan Favourite 3</div>
+    <div class="fan-card">Fan Favourite 4</div>
+    <div class="fan-card">Fan Favourite 5</div>
+    <div class="fan-card">Fan Favourite 6</div>
+    <div class="fan-card">Fan Favourite 7</div>
+    <div class="fan-card">Fan Favourite 8</div>
+    <div class="fan-card">Fan Favourite 9</div>
+    <div class="fan-card">Fan Favourite 10</div>
+    <div class="fan-card">Fan Favourite 11</div>
+    <div class="fan-card">Fan Favourite 12</div>
+    <div class="fan-card">Fan Favourite 13</div>
+    <div class="fan-card">Fan Favourite 14</div>
+    <div class="fan-card">Fan Favourite 15</div>
+    <div class="fan-card">Fan Favourite 16</div>
+    <div class="fan-card">Fan Favourite 17</div>
+    <div class="fan-card">Fan Favourite 18</div>
+    <div class="fan-card">Fan Favourite 19</div>
+    <div class="fan-card">Fan Favourite 20</div>
+    <!-- ...and so on -->
+  </div>
+</section>
+
+<!-- Banner -->
+<section class="banner">
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Logo & Newsletter -->
+      <div>
+        <h2 class="text-2xl font-bold text-orange-400 mb-4">Cookit 🍽️</h2>
+        <p class="mb-4 text-gray-300">Delicious recipes, cooking tips, and more—straight to your inbox.</p>
+        <form class="flex">
+          <input type="email" placeholder="Your email" class="p-2 rounded-l-md text-black focus:outline-none" />
+          <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-r-md">Subscribe</button>
+        </form>
+      </div>
+  
+      <!-- Categories -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Recipes</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li><a href="#" class="hover:text-white">Breakfast</a></li>
+          <li><a href="#" class="hover:text-white">Lunch</a></li>
+          <li><a href="#" class="hover:text-white">Dinner</a></li>
+          <li><a href="#" class="hover:text-white">Desserts</a></li>
+        </ul>
+      </div>
+  
+      <!-- Resources -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Resources</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li><a href="#" class="hover:text-white">About Us</a></li>
+          <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Social Media -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+        <div class="flex space-x-4">
+          <a href="#" aria-label="Facebook" class="hover:text-orange-400">📘</a>
+          <a href="#" aria-label="Instagram" class="hover:text-orange-400">📸</a>
+          <a href="#" aria-label="YouTube" class="hover:text-orange-400">📺</a>
+          <a href="#" aria-label="TikTok" class="hover:text-orange-400">🎵</a>
         </div>
       </div>
-  </nav>
+    </div>
   
-
-  <!-- Main Scrollable Content -->
-  <main class="main-content">
-    <h1 class="title">What’s Cooking?</h1>
-    <h2 class="subtitle">Explore delicious meals from around the world</h2>
-    <p class="description">Your 2025 curated recipe picks by food lovers</p>
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
+      © 2025 Cookit. All rights reserved.
+    </div>
+  </footer>
+  
+</section>
+    
   </main>
+
 
   <script src="../js/home.js"></script>
 </body>
