@@ -2,6 +2,8 @@ package com.cookit.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "users")  // optional: this will create a table named 'users'
 public class User {
@@ -10,10 +12,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;  // Primary key
 
+    private String resetToken;
+    private LocalDateTime tokenExpiry;
     private String name;
     private String email;
     private String phoneNumber;
     private String password;
+
+    public LocalDateTime getTokenExpiry() {
+        return tokenExpiry;
+    }
+
+    public void setTokenExpiry(LocalDateTime tokenExpiry) {
+        this.tokenExpiry = tokenExpiry;
+    }
 
     // Getters and Setters
     public Long getId() { return id; }
@@ -30,4 +42,12 @@ public class User {
 
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+
+    public String getResetToken() {
+        return resetToken;
+    }
+
+    public void setResetToken(String resetToken) {
+        this.resetToken = resetToken;
+    }
 }
