@@ -30,6 +30,9 @@ dependencies {
 
     // Swagger UI / OpenAPI Docs
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+    //email sender
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+
 
     // MySQL Connector
     runtimeOnly 'com.mysql:mysql-connector-j:8.3.0'

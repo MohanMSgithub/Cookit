@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Welcome - CookIt</title>
+    <link rel="stylesheet" href="../css/welcome.css">
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+      
+        .carousel {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          gap: 1rem;
+          padding: 1rem;
+        }
+      
+        .carousel::-webkit-scrollbar {
+          display: none;
+        }
+      
+        .carousel-card {
+          min-width: 80%;
+          flex: 0 0 auto;
+          scroll-snap-align: start;
+          background: #fff;
+          padding: 1rem;
+          border-radius: 12px;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+      
+        .section {
+          margin: 2rem 0;
+          padding: 0 1rem;
+        }
+      
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 1rem;
+          padding: 1rem;
+        }
+      
+        .fan-card {
+          background: #fff;
+          border-radius: 12px;
+          padding: 1rem;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+      
+        .banner {
+          margin-top: 2rem;
+          text-align: center;
+        }
+      
+        .banner img {
+          width: 100%;
+          max-width: 1200px;
+          border-radius: 16px;
+        }
+      
+        /* Responsive Breakpoints */
+        @media (min-width: 600px) {
+          .carousel-card {
+            min-width: 50%;
+          }
+      
+          .grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+      
+        @media (min-width: 768px) {
+          .carousel-card {
+            min-width: 33.333%;
+          }
+      
+          .grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+      
+        @media (min-width: 1024px) {
+          .carousel-card {
+            min-width: 25%;
+          }
+      
+          .grid {
+            grid-template-columns: repeat(5, 1fr);
+          }
+        }
+      </style>
+      
+</head>
+<body>
+<img src="../images/logo-cookit.png" alt="CookIt Logo">
+
+<h1>
+    <span>c</span>
+    <span>o</span>
+    <span>o</span>
+    <span>k</span>
+    <span>i</span>
+    <span>t</span>
+</h1>
+
+<script src="../js/welcome.js"></script>
+</body>
+</html>
