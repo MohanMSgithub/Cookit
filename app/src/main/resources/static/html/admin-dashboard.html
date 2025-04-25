@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - CookIt</title>
+  <link rel="stylesheet" href="../css/admin-dashboard.css">
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+
+  <!-- All Users Table Section -->
+  <section id="user-section">
+    <h2>All Users</h2>
+    <button onclick="fetchAllUsers()">Load Users</button>
+    <table id="users-table">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Populated by JS -->
+      </tbody>
+    </table>
+
+    <!-- Selected User Data -->
+    <div id="user-data" class="recipe-card" style="display: none;">
+      <h3>User Details</h3>
+      <p><strong>Email:</strong> <span id="user-email"></span></p>
+      <p><strong>Phone Number:</strong> <span id="user-phone"></span></p>
+      <p><strong>Favorite Recipes:</strong></p>
+      <ul id="user-favorites"></ul>
+    </div>
+  </section>
+
+  <!-- Add New Recipe Section -->
+  <section id="add-edit-section">
+    <h2 id="form-title">Add New Recipe</h2>
+    <form id="recipe-form">
+      <input type="hidden" id="recipe-id" />
+
+      <!-- Image Upload or URL -->
+      <!-- <label>Upload Image:
+        <input type="file" id="imageUpload" accept="image/*" />
+      </label> -->
+      <label>Image URL:
+        <input type="text" id="imageUrl" placeholder="Image URL" />
+      </label>
+
+      <!-- Recipe Title -->
+      <input type="text" id="title" placeholder="Title" required />
+
+      <!-- Short Description -->
+      <input type="text" id="description" placeholder="Short Description" required />
+
+      <!-- Full Description -->
+      <textarea id="full-description" placeholder="Full Recipe Description" rows="6" required></textarea>
+
+      <!-- Category -->
+      <label for="category">Category:</label>
+<select id="category-select" multiple required></select>
+
+      <!-- Submit -->
+      <button type="submit">Save</button>
+    </form>
+  </section>
+  <!-- Add New Category Section -->
+<section id="add-category-section">
+  <h2>Add New Category</h2>
+  <form id="category-form">
+    <input type="text" id="new-category-name" placeholder="Enter category name" required />
+    <button type="submit">Add Category</button>
+  </form>
+  <p id="category-status"></p>
+</section>
+
+
+  <script src="../js/admin-dashboard.js"></script>
+</body>
+</html>
