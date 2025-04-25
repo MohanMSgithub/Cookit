@@ -15,11 +15,21 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/users/**", "/html/**", "/css/**", "/js/**", "/images/**").permitAll()
-                        .anyRequest().authenticated()
+                        // Allow public access to static resources and API endpoints like /api/recipes
+                        .requestMatchers(  "/api/recipes/**",
+                                "/api/users/**",
+                                "/admin/**",
+                                "/html/**",
+                                "/css/**",
+                                "/js/**",
+                                "/images/**",
+                                "/favicon.ico",
+                                "/**")
+                        .permitAll()
+                        .anyRequest().authenticated() // Require authentication for other requests
                 )
-                .httpBasic(httpBasic -> httpBasic.disable()) // disable basic auth
-                .formLogin(form -> form.disable())           // disable default Spring login form
+                .httpBasic(httpBasic -> httpBasic.disable()) // Disable basic auth
+                .formLogin(form -> form.disable())           // Disable default Spring login form
                 .logout(logout -> logout
                         .logoutUrl("/logout")
                         .logoutSuccessUrl("/api/users/logout-success")

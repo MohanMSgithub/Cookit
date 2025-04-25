@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Cookit.iml" filepath="$PROJECT_DIR$/.idea/modules/Cookit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Cookit.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Cookit.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Cookit.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Cookit.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Cookit.app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Cookit.app.test.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,577 @@
+Folder PATH listing for volume Windows-SSD
+Volume serial number is 2495-3583
+C:.
+¦   .gitattributes
+¦   .gitignore
+¦   gradle.properties
+¦   gradlew
+¦   gradlew.bat
+¦   README.md
+¦   settings.gradle
+¦   structure.txt
+¦   
++---.gradle
+¦   ¦   file-system.probe
+¦   ¦   
+¦   +---8.13
+¦   ¦   ¦   gc.properties
+¦   ¦   ¦   
+¦   ¦   +---checksums
+¦   ¦   ¦       checksums.lock
+¦   ¦   ¦       md5-checksums.bin
+¦   ¦   ¦       sha1-checksums.bin
+¦   ¦   ¦       
+¦   ¦   +---executionHistory
+¦   ¦   ¦       executionHistory.bin
+¦   ¦   ¦       executionHistory.lock
+¦   ¦   ¦       
+¦   ¦   +---expanded
+¦   ¦   +---fileChanges
+¦   ¦   ¦       last-build.bin
+¦   ¦   ¦       
+¦   ¦   +---fileHashes
+¦   ¦   ¦       fileHashes.bin
+¦   ¦   ¦       fileHashes.lock
+¦   ¦   ¦       resourceHashesCache.bin
+¦   ¦   ¦       
+¦   ¦   +---vcsMetadata
+¦   +---buildOutputCleanup
+¦   ¦       buildOutputCleanup.lock
+¦   ¦       cache.properties
+¦   ¦       outputFiles.bin
+¦   ¦       
+¦   +---configuration-cache
+¦   ¦   ¦   configuration-cache.lock
+¦   ¦   ¦   gc.properties
+¦   ¦   ¦   
+¦   ¦   +---252s6k501jwqmqt2zdb1v9lwu
+¦   ¦   ¦       candidates.bin
+¦   ¦   ¦       
+¦   ¦   +---2fb4b942-646d-43cc-9194-c7890a869fd1
+¦   ¦   ¦       .globals.work.bin
+¦   ¦   ¦       .strings.work.bin
+¦   ¦   ¦       work.bin
+¦   ¦   ¦       _app.work.bin
+¦   ¦   ¦       
+¦   ¦   +---34jm5l5uwvb81emd3wf6s3mr7
+¦   ¦   ¦       candidates.bin
+¦   ¦   ¦       
+¦   ¦   +---442a9fe0-8440-4a8b-bda3-c9fd7fbc6ac8
+¦   ¦   ¦       .globals.work.bin
+¦   ¦   ¦       .strings.work.bin
+¦   ¦   ¦       buildfingerprint.bin
+¦   ¦   ¦       entry.bin
+¦   ¦   ¦       projectfingerprint.bin
+¦   ¦   ¦       work.bin
+¦   ¦   ¦       _app.work.bin
+¦   ¦   ¦       
+¦   ¦   +---4e65e9c5-a6d8-43c1-a0f6-1a3844ea708a
+¦   ¦   ¦       .globals.work.bin
+¦   ¦   ¦       .strings.work.bin
+¦   ¦   ¦       buildfingerprint.bin
+¦   ¦   ¦       entry.bin
+¦   ¦   ¦       projectfingerprint.bin
+¦   ¦   ¦       work.bin
+¦   ¦   ¦       _app.work.bin
+¦   ¦   ¦       
+¦   ¦   +---545eabe5-ae67-438f-96d7-7b29cc853bb5
+¦   ¦   +---5e8869ed-2601-4e2f-95e1-afb14ac8c587
+¦   ¦   +---6791d9e2-7b00-4b8a-b2fb-35e31730bef8
+¦   ¦   +---723a5519-fd32-4be2-9d4e-6a001536ea58
+¦   ¦   +---74e1bcb5-4eea-40db-b10a-c9e1feeb0306
+¦   ¦   ¦       .globals.work.bin
+¦   ¦   ¦       .strings.work.bin
+¦   ¦   ¦       work.bin
+¦   ¦   ¦       _app.work.bin
+¦   ¦   ¦       
+¦   ¦   +---77z0iur5oedueku0cko7gb023
+¦   ¦   ¦       candidates.bin
+¦   ¦   ¦       
+¦   ¦   +---918e8281-f0b5-4c0e-9470-46cfd0eaad2b
+¦   ¦   ¦       .globals.work.bin
+¦   ¦   ¦       .strings.work.bin
+¦   ¦   ¦       buildfingerprint.bin
+¦   ¦   ¦       entry.bin
+¦   ¦   ¦       projectfingerprint.bin
+¦   ¦   ¦       work.bin
+¦   ¦   ¦       _app.work.bin
+¦   ¦   ¦       
+¦   ¦   +---9a331888-3ca0-4f88-b413-bb9c959663f7
+¦   ¦   +---a88bcc44-c4a7-4d58-865c-2a3ab494061c
+¦   ¦   ¦       .globals.work.bin
+¦   ¦   ¦       .strings.work.bin
+¦   ¦   ¦       work.bin
+¦   ¦   ¦       _app.work.bin
+¦   ¦   ¦       
+¦   ¦   +---aa35tyoi8pu6hmq8ha7rat7pw
+¦   ¦   ¦       candidates.bin
+¦   ¦   ¦       
+¦   ¦   +---c31b6447-eaa4-4b8e-b330-e9f59e5a001f
+¦   ¦   ¦       .globals.work.bin
+¦   ¦   ¦       .strings.work.bin
+¦   ¦   ¦       buildfingerprint.bin
+¦   ¦   ¦       entry.bin
+¦   ¦   ¦       projectfingerprint.bin
+¦   ¦   ¦       work.bin
+¦   ¦   ¦       _app.work.bin
+¦   ¦   ¦       
+¦   ¦   +---ca1ebe43-1729-435a-945d-16951465cd84
+¦   ¦   ¦       .globals.work.bin
+¦   ¦   ¦       .strings.work.bin
+¦   ¦   ¦       buildfingerprint.bin
+¦   ¦   ¦       entry.bin
+¦   ¦   ¦       projectfingerprint.bin
+¦   ¦   ¦       work.bin
+¦   ¦   ¦       _app.work.bin
+¦   ¦   ¦       
+¦   ¦   +---cf8f927f-c8c7-4f8b-bba1-921792b1a0a0
+¦   ¦   +---d4842fd2-437c-4dd9-ad79-ec8d0de29a39
+¦   ¦   +---e2z0ieubarwnyfm50qpybe9mh
+¦   ¦   ¦       candidates.bin
+¦   ¦   ¦       
+¦   ¦   +---e4a5a21d-5623-4a6c-a31e-851887815ba4
+¦   ¦   ¦       .globals.work.bin
+¦   ¦   ¦       .strings.work.bin
+¦   ¦   ¦       build.work.bin
+¦   ¦   ¦       buildfingerprint.bin
+¦   ¦   ¦       entry.bin
+¦   ¦   ¦       projectfingerprint.bin
+¦   ¦   ¦       work.bin
+¦   ¦   ¦       _app.work.bin
+¦   ¦   ¦       
+¦   ¦   +---itc5onfn6cwzxmbd9ekp3ga8
+¦   ¦           candidates.bin
+¦   ¦           
+¦   +---vcs-1
+¦           gc.properties
+¦           
++---.idea
+¦   ¦   .gitignore
+¦   ¦   compiler.xml
+¦   ¦   gradle.xml
+¦   ¦   jarRepositories.xml
+¦   ¦   misc.xml
+¦   ¦   modules.xml
+¦   ¦   uiDesigner.xml
+¦   ¦   vcs.xml
+¦   ¦   workspace.xml
+¦   ¦   
+¦   +---modules
+¦       +---app
+¦               Cookit.app.main.iml
+¦               
++---.vscode
+¦       settings.json
+¦       
++---app
+¦   ¦   build.gradle
+¦   ¦   
+¦   +---bin
+¦   ¦   +---main
+¦   ¦   ¦   ¦   application.properties
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---com
+¦   ¦   ¦   ¦   +---cookit
+¦   ¦   ¦   ¦       ¦   CookItApplication.class
+¦   ¦   ¦   ¦       ¦   
+¦   ¦   ¦   ¦       +---config
+¦   ¦   ¦   ¦       ¦       SecurityConfig.class
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---controller
+¦   ¦   ¦   ¦       ¦       UserController.class
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---model
+¦   ¦   ¦   ¦       ¦       User.class
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---repository
+¦   ¦   ¦   ¦       ¦       UserRepository.class
+¦   ¦   ¦   ¦       ¦       
+¦   ¦   ¦   ¦       +---service
+¦   ¦   ¦   ¦               EmailService.class
+¦   ¦   ¦   ¦               UserService.class
+¦   ¦   ¦   ¦               
+¦   ¦   ¦   +---static
+¦   ¦   ¦       +---css
+¦   ¦   ¦       ¦       home.css
+¦   ¦   ¦       ¦       login.css
+¦   ¦   ¦       ¦       onboarding.css
+¦   ¦   ¦       ¦       reset_password.css
+¦   ¦   ¦       ¦       signup.css
+¦   ¦   ¦       ¦       welcome.css
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---html
+¦   ¦   ¦       ¦       forgot_password.html
+¦   ¦   ¦       ¦       home.html
+¦   ¦   ¦       ¦       login.html
+¦   ¦   ¦       ¦       onboarding.html
+¦   ¦   ¦       ¦       reset_password.html
+¦   ¦   ¦       ¦       signup.html
+¦   ¦   ¦       ¦       welcome.html
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---images
+¦   ¦   ¦       ¦       cooking_image.jpg
+¦   ¦   ¦       ¦       google_icon.png
+¦   ¦   ¦       ¦       logo-cookit.png
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +---js
+¦   ¦   ¦               forgot_password.js
+¦   ¦   ¦               home.js
+¦   ¦   ¦               login.js
+¦   ¦   ¦               onboarding.js
+¦   ¦   ¦               reset_password.js
+¦   ¦   ¦               signup.js
+¦   ¦   ¦               welcome.js
+¦   ¦   ¦               
+¦   ¦   +---test
+¦   ¦       +---org
+¦   ¦           +---example
+¦   ¦                   AppTest.class
+¦   ¦                   
+¦   +---build
+¦   ¦   ¦   resolvedMainClassName
+¦   ¦   ¦   
+¦   ¦   +---bootScripts
+¦   ¦   ¦       app
+¦   ¦   ¦       app.bat
+¦   ¦   ¦       
+¦   ¦   +---classes
+¦   ¦   ¦   +---java
+¦   ¦   ¦       +---main
+¦   ¦   ¦       ¦   +---com
+¦   ¦   ¦       ¦       +---cookit
+¦   ¦   ¦       ¦           ¦   CookItApplication.class
+¦   ¦   ¦       ¦           ¦   
+¦   ¦   ¦       ¦           +---config
+¦   ¦   ¦       ¦           ¦       SecurityConfig.class
+¦   ¦   ¦       ¦           ¦       
+¦   ¦   ¦       ¦           +---controller
+¦   ¦   ¦       ¦           ¦       UserController.class
+¦   ¦   ¦       ¦           ¦       
+¦   ¦   ¦       ¦           +---model
+¦   ¦   ¦       ¦           ¦       User.class
+¦   ¦   ¦       ¦           ¦       
+¦   ¦   ¦       ¦           +---repository
+¦   ¦   ¦       ¦           ¦       UserRepository.class
+¦   ¦   ¦       ¦           ¦       
+¦   ¦   ¦       ¦           +---service
+¦   ¦   ¦       ¦                   EmailService.class
+¦   ¦   ¦       ¦                   UserService.class
+¦   ¦   ¦       ¦                   
+¦   ¦   ¦       +---test
+¦   ¦   ¦           +---org
+¦   ¦   ¦               +---example
+¦   ¦   ¦                       AppTest.class
+¦   ¦   ¦                       
+¦   ¦   +---distributions
+¦   ¦   ¦       app-0.0.1-SNAPSHOT.tar
+¦   ¦   ¦       app-0.0.1-SNAPSHOT.zip
+¦   ¦   ¦       app-boot-0.0.1-SNAPSHOT.tar
+¦   ¦   ¦       app-boot-0.0.1-SNAPSHOT.zip
+¦   ¦   ¦       
+¦   ¦   +---generated
+¦   ¦   ¦   +---sources
+¦   ¦   ¦       +---annotationProcessor
+¦   ¦   ¦       ¦   +---java
+¦   ¦   ¦       ¦       +---main
+¦   ¦   ¦       ¦       +---test
+¦   ¦   ¦       +---headers
+¦   ¦   ¦           +---java
+¦   ¦   ¦               +---main
+¦   ¦   ¦               +---test
+¦   ¦   +---libs
+¦   ¦   ¦       app-0.0.1-SNAPSHOT-plain.jar
+¦   ¦   ¦       app-0.0.1-SNAPSHOT.jar
+¦   ¦   ¦       
+¦   ¦   +---reports
+¦   ¦   ¦   +---tests
+¦   ¦   ¦       +---test
+¦   ¦   ¦           ¦   index.html
+¦   ¦   ¦           ¦   
+¦   ¦   ¦           +---css
+¦   ¦   ¦           ¦       base-style.css
+¦   ¦   ¦           ¦       style.css
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---js
+¦   ¦   ¦                   report.js
+¦   ¦   ¦                   
+¦   ¦   +---resources
+¦   ¦   ¦   +---main
+¦   ¦   ¦       ¦   application.properties
+¦   ¦   ¦       ¦   
+¦   ¦   ¦       +---static
+¦   ¦   ¦           +---css
+¦   ¦   ¦           ¦       home.css
+¦   ¦   ¦           ¦       login.css
+¦   ¦   ¦           ¦       onboarding.css
+¦   ¦   ¦           ¦       reset_password.css
+¦   ¦   ¦           ¦       signup.css
+¦   ¦   ¦           ¦       welcome.css
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---html
+¦   ¦   ¦           ¦       forgot_password.html
+¦   ¦   ¦           ¦       home.html
+¦   ¦   ¦           ¦       login.html
+¦   ¦   ¦           ¦       onboarding.html
+¦   ¦   ¦           ¦       reset_password.html
+¦   ¦   ¦           ¦       signup.html
+¦   ¦   ¦           ¦       welcome.html
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---images
+¦   ¦   ¦           ¦       cooking_image.jpg
+¦   ¦   ¦           ¦       google_icon.png
+¦   ¦   ¦           ¦       logo-cookit.png
+¦   ¦   ¦           ¦       
+¦   ¦   ¦           +---js
+¦   ¦   ¦                   forgot_password.js
+¦   ¦   ¦                   home.js
+¦   ¦   ¦                   login.js
+¦   ¦   ¦                   onboarding.js
+¦   ¦   ¦                   reset_password.js
+¦   ¦   ¦                   signup.js
+¦   ¦   ¦                   welcome.js
+¦   ¦   ¦                   
+¦   ¦   +---scripts
+¦   ¦   ¦       app
+¦   ¦   ¦       app.bat
+¦   ¦   ¦       
+¦   ¦   +---test-results
+¦   ¦   ¦   +---test
+¦   ¦   ¦       +---binary
+¦   ¦   ¦               output.bin
+¦   ¦   ¦               output.bin.idx
+¦   ¦   ¦               results.bin
+¦   ¦   ¦               
+¦   ¦   +---tmp
+¦   ¦       +---bootJar
+¦   ¦       ¦       MANIFEST.MF
+¦   ¦       ¦       
+¦   ¦       +---compileJava
+¦   ¦       ¦   ¦   previous-compilation-data.bin
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +---compileTransaction
+¦   ¦       ¦       +---backup-dir
+¦   ¦       ¦       +---stash-dir
+¦   ¦       ¦               EmailService.class.uniqueId0
+¦   ¦       ¦               UserService.class.uniqueId1
+¦   ¦       ¦               
+¦   ¦       +---compileTestJava
+¦   ¦       ¦       previous-compilation-data.bin
+¦   ¦       ¦       
+¦   ¦       +---jar
+¦   ¦       ¦       MANIFEST.MF
+¦   ¦       ¦       
+¦   ¦       +---test
+¦   +---src
+¦       +---main
+¦       ¦   +---java
+¦       ¦   ¦   +---com
+¦       ¦   ¦       +---cookit
+¦       ¦   ¦           ¦   CookItApplication.java
+¦       ¦   ¦           ¦   
+¦       ¦   ¦           +---config
+¦       ¦   ¦           ¦       SecurityConfig.java
+¦       ¦   ¦           ¦       
+¦       ¦   ¦           +---controller
+¦       ¦   ¦           ¦       UserController.java
+¦       ¦   ¦           ¦       
+¦       ¦   ¦           +---model
+¦       ¦   ¦           ¦       User.java
+¦       ¦   ¦           ¦       
+¦       ¦   ¦           +---repository
+¦       ¦   ¦           ¦       UserRepository.java
+¦       ¦   ¦           ¦       
+¦       ¦   ¦           +---service
+¦       ¦   ¦                   EmailService.java
+¦       ¦   ¦                   UserService.java
+¦       ¦   ¦                   
+¦       ¦   +---resources
+¦       ¦       ¦   application.properties
+¦       ¦       ¦   
+¦       ¦       +---static
+¦       ¦           +---css
+¦       ¦           ¦       home.css
+¦       ¦           ¦       login.css
+¦       ¦           ¦       onboarding.css
+¦       ¦           ¦       reset_password.css
+¦       ¦           ¦       signup.css
+¦       ¦           ¦       welcome.css
+¦       ¦           ¦       
+¦       ¦           +---html
+¦       ¦           ¦       forgot_password.html
+¦       ¦           ¦       home.html
+¦       ¦           ¦       login.html
+¦       ¦           ¦       onboarding.html
+¦       ¦           ¦       reset_password.html
+¦       ¦           ¦       signup.html
+¦       ¦           ¦       welcome.html
+¦       ¦           ¦       
+¦       ¦           +---images
+¦       ¦           ¦       cooking_image.jpg
+¦       ¦           ¦       google_icon.png
+¦       ¦           ¦       logo-cookit.png
+¦       ¦           ¦       
+¦       ¦           +---js
+¦       ¦                   forgot_password.js
+¦       ¦                   home.js
+¦       ¦                   login.js
+¦       ¦                   onboarding.js
+¦       ¦                   reset_password.js
+¦       ¦                   signup.js
+¦       ¦                   welcome.js
+¦       ¦                   
+¦       +---test
+¦           +---java
+¦               +---org
+¦                   +---example
+¦                           AppTest.java
+¦                           
++---build
+¦   +---reports
+¦       +---configuration-cache
+¦       ¦   +---252s6k501jwqmqt2zdb1v9lwu
+¦       ¦   ¦   +---31hsxkp2075gnrh0p86co9soa
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---3hvzzz2s9szudkuc8z02ub2fw
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---augpwji5wr9w7stw5bb8a8a12
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---cr9mgx4pr0fvmq1rtw0x3f3s0
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---en55mq9rrnns5ga0y1aq8gbjh
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---32g1qavjvfcrhfuv0ip4oxeb6
+¦       ¦   ¦   +---1xuypgd67dptvlctbos7jxeih
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---4y0lkkrq4z06mchyrx23wv8qj
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---34jm5l5uwvb81emd3wf6s3mr7
+¦       ¦   ¦   +---3az2hajq0ddzeyaks8lpia3in
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---6c080vto7u5i01ta0t391w86q
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---3d8xkv3cqm624bnblbh1bndaa
+¦       ¦   ¦   +---bafidv898sdzxv8hhwztr51fy
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---77z0iur5oedueku0cko7gb023
+¦       ¦   ¦   +---2mv73pyhx26fbwtl10ifuxb9w
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---5odvv43ynsorkbu1lygv25z40
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---c9537w1la78gs8mq5yi1j4ov0
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---8u4hzofxuui932fwns81kznfi
+¦       ¦   ¦   +---26p8hnodhtj5uebivdwlbsjoi
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---3m1klflg6y2v6toxz13e57v5x
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---5pmmmsfv4s1o7oa3ngwchhdi7
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---7rqdagj65ggn51alnktm18ibs
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---93fh0b4vma0blql2s60ito0uw
+¦       ¦   ¦   +---8cx5800ww4rl9r7vcvh0dys7b
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---99gp4m0jawm0jsco8wprsivdh
+¦       ¦   ¦   +---etejvcyijnops1zmoadx68tst
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---aa35tyoi8pu6hmq8ha7rat7pw
+¦       ¦   ¦   +---3czwabez2l8hap4amp0my6chj
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---6qlq3bp0lcj29svv6qantz9y6
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---cyj23e4ueglhflmeblzztks38
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---dq9gdcgaf8icd3y0kkuw8vxs5
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---qqpirqthip77vk7yv6p1rrj3
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---aybz4rv50l9qdajy9ks0u05c1
+¦       ¦   ¦   +---4oqdzievf08rbqajl4dvhrgix
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---byny0s731u185jj8o7857us17
+¦       ¦   ¦   +---amktgjl6hfag72n6nbclhcbun
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---e2z0ieubarwnyfm50qpybe9mh
+¦       ¦   ¦   +---65piekki0uoeyjos9b2a08o3t
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---8r62s94mbbb5ghgoa5byojvzi
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---9dvseyz9ztpccmltorenkl1cw
+¦       ¦   ¦   ¦       configuration-cache-report.html
+¦       ¦   ¦   ¦       
+¦       ¦   ¦   +---eqx4g7c8qja7kvyc65h0kj005
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---f1gw4ejdzunc8gsvrlhcl14cx
+¦       ¦   ¦   +---196ngjqcr019y9px88tznszyr
+¦       ¦   ¦           configuration-cache-report.html
+¦       ¦   ¦           
+¦       ¦   +---itc5onfn6cwzxmbd9ekp3ga8
+¦       ¦       +---24x5507cs42qvjao1yxcditwh
+¦       ¦       ¦       configuration-cache-report.html
+¦       ¦       ¦       
+¦       ¦       +---42oiyyoow9kmo2t3svew0kfhp
+¦       ¦       ¦       configuration-cache-report.html
+¦       ¦       ¦       
+¦       ¦       +---80ozw0fmfsbmcdy41edi9p0hu
+¦       ¦       ¦       configuration-cache-report.html
+¦       ¦       ¦       
+¦       ¦       +---8n22r8vbgdp000t1gp2r8nuz5
+¦       ¦       ¦       configuration-cache-report.html
+¦       ¦       ¦       
+¦       ¦       +---bl30pt8cr9pffk64667lk3yv
+¦       ¦       ¦       configuration-cache-report.html
+¦       ¦       ¦       
+¦       ¦       +---c89pftuzll0mf9x1or05babr2
+¦       ¦       ¦       configuration-cache-report.html
+¦       ¦       ¦       
+¦       ¦       +---cl3aufx6hll8a4prl6i1tgpm7
+¦       ¦       ¦       configuration-cache-report.html
+¦       ¦       ¦       
+¦       ¦       +---e2ipxm41bl4apbjzv6i2ezlio
+¦       ¦       ¦       configuration-cache-report.html
+¦       ¦       ¦       
+¦       ¦       +---e86v5pcfc5lv9v67o2cvoojax
+¦       ¦       ¦       configuration-cache-report.html
+¦       ¦       ¦       
+¦       ¦       +---f47h6yzjco9k835fef7e107ja
+¦       ¦               configuration-cache-report.html
+¦       ¦               
+¦       +---problems
+¦               problems-report.html
+¦               
++---gradle
+    ¦   libs.versions.toml
+    ¦   
+    +---wrapper
+            gradle-wrapper.jar
+            gradle-wrapper.properties
+            

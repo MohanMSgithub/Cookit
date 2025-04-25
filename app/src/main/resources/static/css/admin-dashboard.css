@@ -1,0 +1,129 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #d2e1d9;
+    padding: 2rem;
+    color: #333;
+  }
+  
+  /* Headings */
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2d4739;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2d4739;
+  }
+  
+  /* Inputs & Buttons */
+  input, select, textarea, button {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  
+  input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+    border-color: #a4c28a;
+  }
+  
+  button {
+    background-color: #c3d6a2;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #a4c28a;
+  }
+  
+  /* Sections */
+  section {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Recipe Card */
+  .recipe-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cfd8cf;
+  }
+  
+  /* Image */
+  img {
+    display: block;
+    margin-top: 0.5rem;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  table thead {
+    background-color: #c3d6a2;
+    color: white;
+  }
+  
+  table th,
+  table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  /* Favorite Recipes List */
+  #user-favorites {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  #user-favorites li {
+    background: #f5f5f5;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+  
+  /* Textarea */
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  

@@ -3,6 +3,8 @@ package com.cookit.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")  // optional: this will create a table named 'users'
@@ -18,6 +20,22 @@ public class User {
     private String email;
     private String phoneNumber;
     private String password;
+    @ManyToMany
+    @JoinTable(
+            name = "user_favorites",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "recipe_id")
+    )
+    private Set<Recipe> favorites = new HashSet<>();
+
+    public Set<Recipe> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(Set<Recipe> favorites) {
+        this.favorites = favorites;
+    }
+
 
     public LocalDateTime getTokenExpiry() {
         return tokenExpiry;
