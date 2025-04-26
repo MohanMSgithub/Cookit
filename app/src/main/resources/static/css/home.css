@@ -1,5 +1,5 @@
-/* General Reset */
-* {
+ /* General Reset */
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -294,14 +294,13 @@ body {
     transform: translateY(0);
   }
 }
-.modal-img
-{
- width: 25%;          /* Ensure the image width fits the container */
- max-width:50%;      /* Prevent image from exceeding its container */
- height: auto;    
- align-content: center;     /* Maintain aspect ratio */
- max-height: 80vh;     /* Ensure the image does not exceed 80% of the viewport height */
- object-fit: contain;  /* Preserve the aspect ratio without distortion */
+.modal-img {
+  width: 25%;
+  max-width: 70%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: inline-block; /* Make sure it's treated properly inside text-align */
 }
 .modal-close {
   position: absolute;
@@ -310,6 +309,20 @@ body {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
+}
+.fav-icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: #ccc;
+}
+
+.fav-icon.favorited {
+  color: red;
+}
+
+.fav-icon.bounce {
+  transform: scale(1.3);
 }
 
 

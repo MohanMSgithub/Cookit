@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const section = button.closest(".recipe-section");
       section.querySelector(".recipe-row").classList.add("view-all-active");
-    });  
+    });
   });
 });
 
@@ -35,17 +35,57 @@ function fetchRecipes(category, containerId) {
 function createRecipeCard(recipe) {
   const card = document.createElement("div");
   card.className = "recipe-card";
+
+  const favClass = recipe.isFavourite ? "favorited" : "";
+
   card.innerHTML = `
     <img src="${recipe.imageUrl}" alt="${recipe.name}" class="recipe-img" />
     <div class="recipe-info">
       <h3 class="recipe-title">${recipe.name}</h3>
       <p class="recipe-desc">${recipe.shortDescription}</p>
-      <span class="fav-icon">❤️</span>
+      <span class="fav-icon ${favClass}" data-recipe-id="${recipe.id}">&#10084;</span>
     </div>
   `;
-  card.addEventListener("click", () => showRecipeModal(recipe));
+
+  // Open recipe modal on card click (but not on heart click)
+  card.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("fav-icon")) {
+      showRecipeModal(recipe);
+    }
+  });
+
+  // Favourite button logic
+  const favIcon = card.querySelector(".fav-icon");
+  favIcon.addEventListener("click", async (e) => {
+    e.stopPropagation();
+
+    const recipeId = favIcon.dataset.recipeId;
+
+    try {
+      const response = await fetch(`/favourites/${recipeId}`, {
+        method: 'POST'
+      });
+
+      if (response.ok) {
+        favIcon.classList.add("animate-fav"); // trigger animation
+        favIcon.classList.toggle("favorited");
+
+        // Remove animation class after it completes (so we can replay it later)
+        setTimeout(() => {
+          favIcon.classList.remove("animate-fav");
+        }, 500); // Match with animation duration
+      } else {
+        console.error("Failed to add to favourites");
+      }
+    } catch (err) {
+      console.error("Error adding to favourites:", err);
+    }
+  });
+
   return card;
 }
+
+
 
 // Show full recipe modal
 function showRecipeModal(recipe) {
@@ -78,3 +118,53 @@ function showRecipeModal(recipe) {
     document.body.classList.remove("blur-background");
   });
 }
+function createRecipeCard(recipe) {
+  const card = document.createElement("div");
+  card.className = "recipe-card";
+
+  // Apply "favorited" class conditionally
+  const favClass = recipe.favorited ? "favorited" : "";
+
+  card.innerHTML = `
+    <img src="${recipe.imageUrl}" alt="${recipe.name}" class="recipe-img" />
+    <div class="recipe-info">
+      <h3 class="recipe-title">${recipe.name}</h3>
+      <p class="recipe-desc">${recipe.shortDescription}</p>
+      <span class="fav-icon ${favClass}" data-recipe-id="${recipe.id}">❤️</span>
+    </div>
+  `;
+
+  // Add click for full modal
+  card.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("fav-icon")) {
+      showRecipeModal(recipe);
+    }
+  });
+
+  // Add click for fav icon
+  card.querySelector(".fav-icon").addEventListener("click", async (e) => {
+    e.stopPropagation(); // prevent modal open
+    const icon = e.target;
+    const recipeId = icon.dataset.recipeId;
+    const isFavorited = icon.classList.contains("favorited");
+
+    try {
+      const response = await fetch(`/api/favourites/${recipeId}`, {
+        method: isFavorited ? "DELETE" : "POST"
+      });
+
+      if (response.ok) {
+        icon.classList.toggle("favorited");
+        icon.classList.add("bounce");
+        setTimeout(() => icon.classList.remove("bounce"), 500);
+      } else {
+        console.error("Favourite toggle failed");
+      }
+    } catch (err) {
+      console.error("Error:", err);
+    }
+  });
+
+  return card;
+}
+

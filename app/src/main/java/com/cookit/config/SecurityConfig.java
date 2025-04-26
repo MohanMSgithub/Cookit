@@ -24,6 +24,7 @@ public class SecurityConfig {
                                 "/js/**",
                                 "/images/**",
                                 "/favicon.ico",
+                                "/favourites/**",
                                 "/**")
                         .permitAll()
                         .anyRequest().authenticated() // Require authentication for other requests
