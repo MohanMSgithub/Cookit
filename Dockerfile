@@ -22,3 +22,4 @@ RUN ./gradlew build -x test --no-daemon
 # Run the Spring Boot app
 CMD ["java", "-jar", "app/build/libs/app-0.0.1-SNAPSHOT.jar"]
 
+
