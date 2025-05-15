@@ -1,10 +1,5 @@
 services:
   - type: web
     name: cookit
-    env: java
+    env: docker
     plan: free
-    buildCommand: ./gradlew build
-    startCommand: java -jar build/libs/cookit-0.0.1-SNAPSHOT.jar
-    envVars:
-      - key: JAVA_VERSION
-        value: 17
