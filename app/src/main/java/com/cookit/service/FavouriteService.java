@@ -24,7 +24,7 @@ public class FavouriteService {
     @Autowired
     private FavouriteRepository favouriteRepository;
 
-    public boolean addToFavourites(Long recipeId) {
+    public boolean addToFavourites(Long recipeId, Long userId) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication == null || !authentication.isAuthenticated() || authentication.getPrincipal().equals("anonymousUser")) {

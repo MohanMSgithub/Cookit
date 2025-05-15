@@ -126,13 +126,16 @@ function createRecipeCard(recipe) {
   const favClass = recipe.favorited ? "favorited" : "";
 
   card.innerHTML = `
-    <img src="${recipe.imageUrl}" alt="${recipe.name}" class="recipe-img" />
-    <div class="recipe-info">
-      <h3 class="recipe-title">${recipe.name}</h3>
-      <p class="recipe-desc">${recipe.shortDescription}</p>
-      <span class="fav-icon ${favClass}" data-recipe-id="${recipe.id}">❤️</span>
-    </div>
-  `;
+  <img src="${recipe.imageUrl}" alt="${recipe.name}" class="recipe-img" />
+  <div class="recipe-info">
+    <h3 class="recipe-title">${recipe.name}</h3>
+    <p class="recipe-desc">${recipe.shortDescription}</p>
+    <span class="fav-icon ${favClass}" data-recipe-id="${recipe.id}" onclick="toggleFavorite(this)">
+      <img src="/images/icons8-favorite-48.png" alt="Favorite" />
+    </span>
+  </div>
+`;
+
 
   // Add click for full modal
   card.addEventListener("click", (e) => {
