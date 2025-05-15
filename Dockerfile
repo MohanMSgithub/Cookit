@@ -1,25 +1,17 @@
-# Use an official OpenJDK runtime as a parent image
+# Use official JDK image
 FROM eclipse-temurin:20-jdk-alpine
 
-# Set working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy the Gradle wrapper and build files
-COPY gradlew .
-COPY gradle gradle
-COPY app/build.gradle .
-COPY settings.gradle .
+# Copy the entire project into the container
+COPY . .
 
-# Download dependencies only (improves caching)
-RUN ./gradlew build -x test --no-daemon
+# Grant permissions
+RUN chmod +x ./gradlew
 
-# Copy the rest of the app
-COPY app/src ./src
+# Build the Spring Boot app
+RUN ./gradlew :app:bootJar --no-daemon
 
-# Build the project
-RUN ./gradlew build -x test --no-daemon
-
-# Run the Spring Boot app
+# Run the generated jar
 CMD ["java", "-jar", "app/build/libs/app-0.0.1-SNAPSHOT.jar"]
-
-
