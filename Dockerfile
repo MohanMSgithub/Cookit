@@ -5,7 +5,7 @@ FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 
 # Copy the Gradle wrapper and build files
-COPY app/gradlew .
+COPY gradlew .
 COPY gradle gradle
 COPY app/build.gradle .
 COPY settings.gradle .
