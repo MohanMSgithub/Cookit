@@ -8,7 +8,7 @@ WORKDIR /app
 COPY app/gradlew .
 COPY app/gradle gradle
 COPY app/build.gradle .
-COPY app/settings.gradle .
+COPY settings.gradle .
 
 # Download dependencies only (improves caching)
 RUN ./gradlew build -x test --no-daemon
