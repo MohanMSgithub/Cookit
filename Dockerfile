@@ -4,17 +4,17 @@ FROM eclipse-temurin:17-jdk-alpine
 # Set working directory inside the container
 WORKDIR /app
 
-# Copy the Gradle wrapper and build files first for better caching
-COPY gradlew .
-COPY gradle gradle
-COPY build.gradle .
-COPY settings.gradle .
+# Copy the Gradle wrapper and build files
+COPY app/gradlew .
+COPY app/gradle gradle
+COPY app/build.gradle .
+COPY app/settings.gradle .
 
-# Download dependencies only (optional but speeds up build)
+# Download dependencies only (improves caching)
 RUN ./gradlew build -x test --no-daemon
 
-# Copy the rest of the project files
-COPY . .
+# Copy the rest of the app
+COPY app/src ./src
 
 # Build the project
 RUN ./gradlew build -x test --no-daemon
