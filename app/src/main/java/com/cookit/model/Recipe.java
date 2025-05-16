@@ -16,7 +16,7 @@ public class Recipe {
     private String shortDescription;
 
     @Lob
-    @Column(columnDefinition = "LONGTEXT")
+    @Column(columnDefinition = "TEXT")
     private String fullDescription;
 
     private String imageUrl;
