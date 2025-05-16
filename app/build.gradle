@@ -30,12 +30,12 @@ dependencies {
 
     // Swagger UI / OpenAPI Docs
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
-    //email sender
+
+    // Email sender
     implementation 'org.springframework.boot:spring-boot-starter-mail'
 
-
-    // MySQL Connector
-    runtimeOnly 'com.mysql:mysql-connector-j:8.3.0'
+    // PostgreSQL Connector (REQUIRED)
+    runtimeOnly 'org.postgresql:postgresql:42.7.1'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
@@ -44,8 +44,4 @@ dependencies {
     // Testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'junit:junit:4.13.2'
-}
-
-application {
-    mainClass = 'com.cookit.CookItApplication'
 }
