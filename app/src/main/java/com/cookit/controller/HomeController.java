@@ -8,6 +8,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "login"; // This should be the name of your Thymeleaf template (e.g., index.html)
+        return "redirect:/html/login.html"; // This should be the name of your Thymeleaf template (e.g., index.html)
     }
 }
