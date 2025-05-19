@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryId = document.getElementById('categoryId').value;
 
     try {
-      const response = await fetch(`/api/recipes?categoryId=${categoryId}`, {
+      const response = await fetch(`/admin/recipes?categoryId=${categoryId}`, {
+
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(recipe)
