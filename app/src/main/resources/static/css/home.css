@@ -300,7 +300,7 @@ body {
   height: auto;
   max-height: 80vh;
   object-fit: contain;
-  display: inline-block; /* Make sure it's treated properly inside text-align */
+  display: inline-block; 
 }
 .modal-close {
   position: absolute;
@@ -341,7 +341,6 @@ body {
   .carousel-card { min-width: 25%; }
   .grid { grid-template-columns: repeat(5, 1fr); }
 }
-/* Add this to style.css or your main CSS file */
 .fav-icon {
   display: inline-block;
   width: 24px;
@@ -363,3 +362,18 @@ body {
 .fav-icon.red img {
   filter: hue-rotate(-50deg) saturate(300%);
 }
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.sub-nav {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+

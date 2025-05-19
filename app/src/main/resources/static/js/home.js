@@ -66,7 +66,7 @@ function createRecipeCard(recipe) {
         method: 'POST'
       });
 
-      if (response.ok) {
+      if (response.ok) {  
         favIcon.classList.add("animate-fav"); // trigger animation
         favIcon.classList.toggle("favorited");
 
@@ -171,3 +171,18 @@ function createRecipeCard(recipe) {
   return card;
 }
 
+function updateMainPadding() {
+    const navbar = document.querySelector('.navbar');
+    const subNav = document.querySelector('.sub-nav');
+    const main = document.querySelector('main');
+
+    if (navbar && subNav && main) {
+      const navbarHeight = navbar.offsetHeight;
+      const subNavHeight = subNav.offsetHeight;
+      subNav.style.top = navbarHeight + 'px';
+      main.style.paddingTop = (navbarHeight + subNavHeight) + 'px';
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", updateMainPadding);
+  window.addEventListener("resize", updateMainPadding);
