@@ -23,7 +23,7 @@ public class RecipeController {
     @GetMapping
     public List<Recipe> getRecipes(@RequestParam(required = false) String category) {
         if (category != null) {
-            Category cat = categoryRepository.findByName(category);
+            Category cat = categoryRepository.findByNameIgnoreCase(category);
             if (cat != null) {
                 return cat.getRecipes();
             }
