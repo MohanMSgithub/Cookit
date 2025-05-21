@@ -23,13 +23,10 @@ public class RecipeController {
     @GetMapping
     public List<Recipe> getRecipes(@RequestParam(required = false) String category) {
         if (category != null) {
-            Category cat = categoryRepository.findByNameIgnoreCase(category);
-            if (cat != null) {
-                return cat.getRecipes();
-            }
-            return List.of(); // empty list if category not found
+            return recipeRepository.findByCategoryNameIgnoreCase(category);
         }
         return recipeRepository.findAll();
     }
+
 }
 
