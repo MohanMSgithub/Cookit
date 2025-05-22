@@ -85,7 +85,7 @@ function createRecipeCard(recipe) {
   return card;
 }
 
-// Show full recipe modal
+// Show full recipe modal// Show full recipe modal
 function showRecipeModal(recipe) {
   let modal = document.getElementById("recipe-modal");
 
@@ -95,51 +95,36 @@ function showRecipeModal(recipe) {
     modal.className = "modal-overlay";
     modal.innerHTML = `
       <div class="modal-content">
-    <button class="modal-close">✕</button>
-    <img src="${recipe.imageUrl}" alt="${recipe.name}" class="modal-img"/>
-    <h2>${recipe.name}</h2>
-    <pre>${recipe.fullDescription}</pre>
-    </div>
-
+        <button class="modal-close">✕</button>
+        <img src="" alt="Recipe Image" class="modal-img"/>
+        <h2></h2>
+        <pre></pre>
+      </div>
     `;
-  let modal = document.getElementById("recipe-modal");
+    document.body.appendChild(modal);
+  }
 
-if (!modal) {
-  modal = document.createElement("div");
-  modal.id = "recipe-modal";
-  modal.classList.add("modal");
-  modal.innerHTML = `
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <img class="modal-img" src="" alt="Recipe Image">
-      <h2></h2>
-      <p></p>
-    </div>
-  `;
-  document.body.appendChild(modal);
+  // Update modal content
+  const imgEl = modal.querySelector(".modal-img");
+  const titleEl = modal.querySelector("h2");
+  const descEl = modal.querySelector("pre");
+
+  if (imgEl && titleEl && descEl) {
+    imgEl.src = recipe.imageUrl;
+    titleEl.textContent = recipe.name;
+    descEl.textContent = recipe.fullDescription;
+  } else {
+    console.error("Modal inner elements not found.");
+  }
+
+  modal.style.display = "flex";
+  document.body.classList.add("blur-background");
+
+  modal.querySelector(".modal-close").addEventListener("click", () => {
+    modal.style.display = "none";
+    document.body.classList.remove("blur-background");
+  });
 }
-
-// Re-select elements *after* ensuring modal exists
-const imgEl = modal.querySelector(".modal-img");
-const titleEl = modal.querySelector("h2");
-const descEl = modal.querySelector("p");
-
-// Defensive null check (optional but safe)
-if (imgEl && titleEl && descEl) {
-  imgEl.src = recipe.imageUrl;
-  titleEl.textContent = recipe.name;
-  descEl.textContent = recipe.fullDescription;
-} else {
-  console.error("Modal inner elements not found.");
-}
-
-modal.style.display = "flex";
-document.body.classList.add("blur-background");
-
-modal.querySelector(".modal-close").addEventListener("click", () => {
-  modal.style.display = "none";
-  document.body.classList.remove("blur-background");
-});
 
 // Update padding for sticky nav
 function updateMainPadding() {
