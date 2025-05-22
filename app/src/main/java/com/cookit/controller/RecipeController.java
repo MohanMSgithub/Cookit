@@ -23,10 +23,17 @@ public class RecipeController {
     @GetMapping
     public List<Recipe> getRecipes(@RequestParam(required = false) String category) {
         if (category != null) {
+            // Normalize input
+            category = category.trim().replaceAll("\\s+", " ");
+
+            // Log for debugging
+            System.out.println("🔎 Category from frontend = '" + category + "'");
+
             return recipeRepository.findByCategoryNameIgnoreCase(category);
         }
         return recipeRepository.findAll();
     }
+
 
 }
 
