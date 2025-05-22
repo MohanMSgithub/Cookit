@@ -102,21 +102,44 @@ function showRecipeModal(recipe) {
     </div>
 
     `;
-    document.body.appendChild(modal);
-  } else {
-    modal.querySelector(".modal-img").src = recipe.imageUrl;
-    modal.querySelector("h2").textContent = recipe.name;
-    modal.querySelector("p").textContent = recipe.fullDescription;
-  }
+  let modal = document.getElementById("recipe-modal");
 
-  modal.style.display = "flex";
-  document.body.classList.add("blur-background");
-
-  modal.querySelector(".modal-close").addEventListener("click", () => {
-    modal.style.display = "none";
-    document.body.classList.remove("blur-background");
-  });
+if (!modal) {
+  modal = document.createElement("div");
+  modal.id = "recipe-modal";
+  modal.classList.add("modal");
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img class="modal-img" src="" alt="Recipe Image">
+      <h2></h2>
+      <p></p>
+    </div>
+  `;
+  document.body.appendChild(modal);
 }
+
+// Re-select elements *after* ensuring modal exists
+const imgEl = modal.querySelector(".modal-img");
+const titleEl = modal.querySelector("h2");
+const descEl = modal.querySelector("p");
+
+// Defensive null check (optional but safe)
+if (imgEl && titleEl && descEl) {
+  imgEl.src = recipe.imageUrl;
+  titleEl.textContent = recipe.name;
+  descEl.textContent = recipe.fullDescription;
+} else {
+  console.error("Modal inner elements not found.");
+}
+
+modal.style.display = "flex";
+document.body.classList.add("blur-background");
+
+modal.querySelector(".modal-close").addEventListener("click", () => {
+  modal.style.display = "none";
+  document.body.classList.remove("blur-background");
+});
 
 // Update padding for sticky nav
 function updateMainPadding() {
