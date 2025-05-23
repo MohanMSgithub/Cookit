@@ -3,6 +3,7 @@ package com.cookit.controller;
 import com.cookit.model.User;
 import com.cookit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -16,8 +17,13 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/signup")
-    public String signup(@RequestBody User user) {
-        return userService.signup(user);
+    public ResponseEntity<String> signup(@RequestBody User user) {
+        String result = userService.signup(user);
+        if ("Signup successful!".equals(result)) {
+            return ResponseEntity.ok(result);
+        } else {
+            return ResponseEntity.badRequest().body(result);
+        }
     }
 
     // Login with JSON body

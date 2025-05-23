@@ -36,118 +36,32 @@ function createRecipeCard(recipe) {
   const card = document.createElement("div");
   card.className = "recipe-card";
 
-  const favClass = recipe.isFavourite ? "favorited" : "";
+  const favClass = recipe.isFavourite || recipe.favorited ? "favorited" : "";
 
   card.innerHTML = `
     <img src="${recipe.imageUrl}" alt="${recipe.name}" class="recipe-img" />
     <div class="recipe-info">
       <h3 class="recipe-title">${recipe.name}</h3>
       <p class="recipe-desc">${recipe.shortDescription}</p>
-      <span class="fav-icon ${favClass}" data-recipe-id="${recipe.id}">&#10084;</span>
+      <span class="fav-icon ${favClass}" data-recipe-id="${recipe.id}">
+        <img src="/images/icons8-favorite-48.png" alt="Favorite" />
+      </span>
     </div>
   `;
 
-  // Open recipe modal on card click (but not on heart click)
+  // Open recipe modal on card click (excluding fav icon)
   card.addEventListener("click", (e) => {
-    if (!e.target.classList.contains("fav-icon")) {
+    if (!e.target.closest(".fav-icon")) {
       showRecipeModal(recipe);
     }
   });
 
-  // Favourite button logic
+  // Favorite icon logic
   const favIcon = card.querySelector(".fav-icon");
   favIcon.addEventListener("click", async (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Prevent modal opening
 
-    const recipeId = favIcon.dataset.recipeId;
-
-    try {
-      const response = await fetch(`/favourites/${recipeId}`, {
-        method: 'POST'
-      });
-
-      if (response.ok) {
-        favIcon.classList.add("animate-fav"); // trigger animation
-        favIcon.classList.toggle("favorited");
-
-        // Remove animation class after it completes (so we can replay it later)
-        setTimeout(() => {
-          favIcon.classList.remove("animate-fav");
-        }, 500); // Match with animation duration
-      } else {
-        console.error("Failed to add to favourites");
-      }
-    } catch (err) {
-      console.error("Error adding to favourites:", err);
-    }
-  });
-
-  return card;
-}
-
-
-
-// Show full recipe modal
-function showRecipeModal(recipe) {
-  let modal = document.getElementById("recipe-modal");
-
-  if (!modal) {
-    modal = document.createElement("div");
-    modal.id = "recipe-modal";
-    modal.className = "modal-overlay";
-    modal.innerHTML = `
-      <div class="modal-content">
-        <button class="modal-close">✕</button>
-        <img src="${recipe.imageUrl}" alt="${recipe.name}" class="modal-img"/>
-        <h2>${recipe.name}</h2>
-        <p>${recipe.fullDescription}</p>
-      </div>
-    `;
-    document.body.appendChild(modal);
-  } else {
-    modal.querySelector(".modal-img").src = recipe.imageUrl;
-    modal.querySelector("h2").textContent = recipe.name;
-    modal.querySelector("p").textContent = recipe.fullDescription;
-  }
-
-  modal.style.display = "flex";
-  document.body.classList.add("blur-background");
-
-  modal.querySelector(".modal-close").addEventListener("click", () => {
-    modal.style.display = "none";
-    document.body.classList.remove("blur-background");
-  });
-}
-function createRecipeCard(recipe) {
-  const card = document.createElement("div");
-  card.className = "recipe-card";
-
-  // Apply "favorited" class conditionally
-  const favClass = recipe.favorited ? "favorited" : "";
-
-  card.innerHTML = `
-  <img src="${recipe.imageUrl}" alt="${recipe.name}" class="recipe-img" />
-  <div class="recipe-info">
-    <h3 class="recipe-title">${recipe.name}</h3>
-    <p class="recipe-desc">${recipe.shortDescription}</p>
-    <span class="fav-icon ${favClass}" data-recipe-id="${recipe.id}" onclick="toggleFavorite(this)">
-      <img src="/images/icons8-favorite-48.png" alt="Favorite" />
-    </span>
-  </div>
-`;
-
-
-  // Add click for full modal
-  card.addEventListener("click", (e) => {
-    if (!e.target.classList.contains("fav-icon")) {
-      showRecipeModal(recipe);
-    }
-  });
-
-  // Add click for fav icon
-  card.querySelector(".fav-icon").addEventListener("click", async (e) => {
-    e.stopPropagation(); // prevent modal open
-    const icon = e.target;
+    const icon = favIcon;
     const recipeId = icon.dataset.recipeId;
     const isFavorited = icon.classList.contains("favorited");
 
@@ -171,3 +85,60 @@ function createRecipeCard(recipe) {
   return card;
 }
 
+// Show full recipe modal// Show full recipe modal
+function showRecipeModal(recipe) {
+  let modal = document.getElementById("recipe-modal");
+
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "recipe-modal";
+    modal.className = "modal-overlay";
+    modal.innerHTML = `
+      <div class="modal-content">
+        <button class="modal-close">✕</button>
+        <img src="" alt="Recipe Image" class="modal-img"/>
+        <h2></h2>
+        <pre></pre>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  // Update modal content
+  const imgEl = modal.querySelector(".modal-img");
+  const titleEl = modal.querySelector("h2");
+  const descEl = modal.querySelector("pre");
+
+  if (imgEl && titleEl && descEl) {
+    imgEl.src = recipe.imageUrl;
+    titleEl.textContent = recipe.name;
+    descEl.textContent = recipe.fullDescription;
+  } else {
+    console.error("Modal inner elements not found.");
+  }
+
+  modal.style.display = "flex";
+  document.body.classList.add("blur-background");
+
+  modal.querySelector(".modal-close").addEventListener("click", () => {
+    modal.style.display = "none";
+    document.body.classList.remove("blur-background");
+  });
+}
+
+// Update padding for sticky nav
+function updateMainPadding() {
+  const navbar = document.querySelector('.navbar');
+  const subNav = document.querySelector('.sub-nav');
+  const main = document.querySelector('main');
+
+  if (navbar && subNav && main) {
+    const navbarHeight = navbar.offsetHeight;
+    const subNavHeight = subNav.offsetHeight;
+    subNav.style.top = navbarHeight + 'px';
+    main.style.paddingTop = (navbarHeight + subNavHeight) + 'px';
+  }
+}
+
+window.addEventListener("DOMContentLoaded", updateMainPadding);
+window.addEventListener("resize", updateMainPadding);

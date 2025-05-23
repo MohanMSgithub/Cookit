@@ -15,7 +15,7 @@ public class Recipe {
     @Column(length = 500)
     private String shortDescription;
 
-    @Lob
+
     @Column(columnDefinition = "TEXT")
     private String fullDescription;
 
