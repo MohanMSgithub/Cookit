@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   categories.forEach(cat => {
-    fetchRecipes(cat.name, cat.id);
+    fetchRecipes(cat.name, cat.id)  ;
   });
 
   document.querySelectorAll(".view-all").forEach(button => {
