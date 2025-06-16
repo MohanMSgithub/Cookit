@@ -33,6 +33,7 @@ public class RecipeController {
                 category = category.trim().replaceAll("\\s+", " ");
                 System.out.println("🔎 Category from frontend = '" + category + "'");
 
+
                 Optional<Category> categoryOpt = Optional.ofNullable(categoryRepository.findByNameIgnoreCase(category));
                 if (!categoryOpt.isPresent()) {
                     Map<String, Object> error = new HashMap<>();
