@@ -150,28 +150,35 @@ function searchRecipes() {
       return res.json();
     })
     .then(data => {
+      console.log("Search results:", data); // 🔍 Check if anything is returned
+
       const modal = document.getElementById("search-modal");
       const resultsContainer = document.getElementById("search-results");
+      if (!resultsContainer) {
+        console.error("❌ search-results container not found!");
+        return;
+      }
 
-      resultsContainer.innerHTML = ''; // Clear previous results
+      resultsContainer.innerHTML = '';
 
       if (data.length === 0) {
         resultsContainer.innerHTML = "<p>No recipes found.</p>";
       } else {
         data.forEach(recipe => {
-          const card = createRecipeCard(recipe); // Reuse your existing function
+          console.log("Adding recipe:", recipe); // Check what you get
+          const card = createRecipeCard(recipe);
           resultsContainer.appendChild(card);
         });
       }
 
       modal.classList.remove("hidden");
-      document.body.classList.add("blurred");
-
+      document.body.classList.add("blur-background");
     })
     .catch(err => {
       console.error("Search error:", err);
     });
 }
+
 document.getElementById("closeSearchModal").addEventListener("click", () => {
   document.getElementById("search-modal").classList.add("hidden");
   document.body.classList.remove("blurred");
