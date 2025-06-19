@@ -150,23 +150,38 @@ function searchRecipes() {
       return res.json();
     })
     .then(data => {
-      const container = document.getElementById("popular-recipes");
-      container.innerHTML = ''; // clear old results
+      const modal = document.getElementById("search-modal");
+      const resultsContainer = document.getElementById("search-results");
+
+      resultsContainer.innerHTML = ''; // Clear previous results
 
       if (data.length === 0) {
-        container.innerHTML = "<p>No recipes found.</p>";
-        return;
+        resultsContainer.innerHTML = "<p>No recipes found.</p>";
+      } else {
+        data.forEach(recipe => {
+          const card = createRecipeCard(recipe); // Reuse your existing function
+          resultsContainer.appendChild(card);
+        });
       }
 
-      data.forEach(recipe => {
-        const card = createRecipeCard(recipe);
-        container.appendChild(card);
-      });
+      modal.classList.remove("hidden");
+      document.body.classList.add("blurred");
+
     })
     .catch(err => {
       console.error("Search error:", err);
     });
 }
+document.getElementById("closeSearchModal").addEventListener("click", () => {
+  document.getElementById("search-modal").classList.add("hidden");
+  document.body.classList.remove("blurred");
+});
+document.getElementById("searchInput").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    searchRecipes();
+  }
+});
 
 
 window.addEventListener("DOMContentLoaded", updateMainPadding);

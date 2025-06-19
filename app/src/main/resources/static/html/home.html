@@ -14,12 +14,19 @@
   <header class="navbar">
     <div class="logo-area">
       <img src="../images/logo-cookit.png" alt="CookIt Logo" class="logo"/>
+        <div id="search-modal" class="search-modal hidden">
+      <div class="search-modal-content">
+      <button id="closeSearchModal" class="close-btn">✕</button>
+      <h2>Search Results</h2>
+      <div id="search-results" class="recipe-row"></div>
+      </div>
+      </div>
+
       
       <a href="home.html" class="site-title">CookIt</a>
     </div>
     <input type="text" id="searchInput" class="search-bar" placeholder="Search recipes or ingredients..." />
-    <button onclick="searchRecipes()">Search</button>
-    <div class="nav-buttons">
+     <div class="nav-buttons">
       <div class="dropdown">
         <button class="nav-btn">Discover</button>
         <div class="dropdown-content">
