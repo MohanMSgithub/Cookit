@@ -34,10 +34,11 @@ dependencies {
     // Email sender
     implementation 'org.springframework.boot:spring-boot-starter-mail'
 
-    // PostgreSQL Connector (REQUIRED)
-    runtimeOnly 'org.postgresql:postgresql:42.7.1'
+    // mySQL Connector (REQUIRED)
+    implementation 'mysql:mysql-connector-java:8.0.33'
 
-    // Lombok
+
+    // Lombokgit
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 

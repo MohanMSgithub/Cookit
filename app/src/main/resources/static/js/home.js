@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   categories.forEach(cat => {
-    fetchRecipes(cat.name, cat.id);
+    fetchRecipes(cat.name, cat.id)  ;
   });
 
   document.querySelectorAll(".view-all").forEach(button => {
@@ -139,6 +139,57 @@ function updateMainPadding() {
     main.style.paddingTop = (navbarHeight + subNavHeight) + 'px';
   }
 }
+
+function searchRecipes() {
+  const query = document.getElementById("searchInput").value.trim();
+  if (!query) return;
+
+  fetch(`/api/recipes/search?query=${encodeURIComponent(query)}`)
+    .then(res => {
+      if (!res.ok) throw new Error("Search failed");
+      return res.json();
+    })
+    .then(data => {
+      console.log("Search results:", data); // 🔍 Check if anything is returned
+
+      const modal = document.getElementById("search-modal");
+      const resultsContainer = document.getElementById("search-results");
+      if (!resultsContainer) {
+        console.error("❌ search-results container not found!");
+        return;
+      }
+
+      resultsContainer.innerHTML = '';
+
+      if (data.length === 0) {
+        resultsContainer.innerHTML = "<p>No recipes found.</p>";
+      } else {
+        data.forEach(recipe => {
+          console.log("Adding recipe:", recipe); // Check what you get
+          const card = createRecipeCard(recipe);
+          resultsContainer.appendChild(card);
+        });
+      }
+
+      modal.classList.remove("hidden");
+      document.body.classList.add("blur-background");
+    })
+    .catch(err => {
+      console.error("Search error:", err);
+    });
+}
+
+document.getElementById("closeSearchModal").addEventListener("click", () => {
+  document.getElementById("search-modal").classList.add("hidden");
+  document.body.classList.remove("blurred");
+});
+document.getElementById("searchInput").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    searchRecipes();
+  }
+});
+
 
 window.addEventListener("DOMContentLoaded", updateMainPadding);
 window.addEventListener("resize", updateMainPadding);
