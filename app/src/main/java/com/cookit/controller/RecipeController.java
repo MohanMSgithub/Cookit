@@ -54,5 +54,22 @@ public class RecipeController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
         }
     }
+    @GetMapping("/search")
+    public ResponseEntity<?> searchRecipes(@RequestParam("query") String query) {
+        try {
+            if (query == null || query.trim().isEmpty()) {
+                return ResponseEntity.badRequest().body("Query parameter is missing.");
+            }
+
+            List<Recipe> results = recipeRepository
+                    .findByNameContainingIgnoreCaseOrShortDescriptionContainingIgnoreCase(query, query);
+
+            return ResponseEntity.ok(results);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error during search.");
+        }
+    }
+
 
 }

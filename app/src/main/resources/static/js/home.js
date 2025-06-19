@@ -140,5 +140,34 @@ function updateMainPadding() {
   }
 }
 
+function searchRecipes() {
+  const query = document.getElementById("searchInput").value.trim();
+  if (!query) return;
+
+  fetch(`/api/recipes/search?query=${encodeURIComponent(query)}`)
+    .then(res => {
+      if (!res.ok) throw new Error("Search failed");
+      return res.json();
+    })
+    .then(data => {
+      const container = document.getElementById("popular-recipes");
+      container.innerHTML = ''; // clear old results
+
+      if (data.length === 0) {
+        container.innerHTML = "<p>No recipes found.</p>";
+        return;
+      }
+
+      data.forEach(recipe => {
+        const card = createRecipeCard(recipe);
+        container.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error("Search error:", err);
+    });
+}
+
+
 window.addEventListener("DOMContentLoaded", updateMainPadding);
 window.addEventListener("resize", updateMainPadding);

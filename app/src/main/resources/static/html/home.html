@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta itemprop="name" content="CookIt-website">
+  <meta itemprop="description" content="Self Developed recipe recomendation website build with springboot">
+  <meta itemprop="image" content="...">
   <title>CookIt - Home</title>
   <link rel="stylesheet" href="../css/home.css" />
 </head>
@@ -11,9 +14,11 @@
   <header class="navbar">
     <div class="logo-area">
       <img src="../images/logo-cookit.png" alt="CookIt Logo" class="logo"/>
+      
       <a href="home.html" class="site-title">CookIt</a>
     </div>
-    <input type="text" class="search-bar" placeholder="Search recipes or ingredients..." />
+    <input type="text" id="searchInput" class="search-bar" placeholder="Search recipes or ingredients..." />
+    <button onclick="searchRecipes()">Search</button>
     <div class="nav-buttons">
       <div class="dropdown">
         <button class="nav-btn">Discover</button>

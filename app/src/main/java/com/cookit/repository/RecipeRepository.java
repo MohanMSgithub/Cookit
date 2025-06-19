@@ -13,5 +13,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
     @Query("SELECT r FROM Recipe r WHERE LOWER(r.category.name) = LOWER(:category)")
     List<Recipe> findByCategoryNameIgnoreCase(@Param("category") String category);
+    List<Recipe> findByNameContainingIgnoreCaseOrShortDescriptionContainingIgnoreCase(String name, String description);
+
 
 }
