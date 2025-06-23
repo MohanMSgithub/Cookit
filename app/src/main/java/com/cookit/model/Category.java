@@ -1,5 +1,6 @@
 package com.cookit.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +15,9 @@ public class Category {
     private String name;
 
     @ManyToMany(mappedBy = "categories")
+    @JsonBackReference
     private Set<Recipe> recipes = new HashSet<>();
+
 
     // Getters and Setters
 
