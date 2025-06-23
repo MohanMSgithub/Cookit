@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/admin")
@@ -25,35 +27,34 @@ public class AdminController {
     @Autowired
     private CategoryRepository categoryRepo;
 
-    // 🔹 Admin: Get all recipes
+    // 🔹 Get all recipes
     @GetMapping("/recipes")
     public List<Recipe> getAllRecipes() {
         return recipeRepo.findAll();
     }
 
-    // 🔹 Admin: Add new recipe (with categoryId)
+    // 🔹 Add new recipe with multiple category IDs
     @PostMapping("/recipes")
     public ResponseEntity<Recipe> addRecipe(
             @RequestBody Recipe recipe,
-            @RequestParam Long categoryId
+            @RequestParam List<Long> categoryIds
     ) {
-        return categoryRepo.findById(categoryId).map(category -> {
-            recipe.setCategory(category);
-            Recipe saved = recipeRepo.save(recipe);
-            return ResponseEntity.ok(saved); // ✅ This is fine
-        }).orElse(ResponseEntity.badRequest().build()); // ✅ No message, but valid ResponseEntity<Recipe>
+        List<Category> categories = categoryRepo.findAllById(categoryIds);
+        if (categories.isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        recipe.setCategories(new HashSet<>(categories));
+        Recipe saved = recipeRepo.save(recipe);
+        return ResponseEntity.ok(saved);
     }
 
-
-
-
-
-    // 🔹 Admin: Update recipe
+    // 🔹 Update recipe and optionally its categories
     @PutMapping("/recipes/{id}")
     public ResponseEntity<?> updateRecipe(
             @PathVariable Long id,
             @RequestBody Recipe updatedRecipe,
-            @RequestParam(required = false) Long categoryId
+            @RequestParam(required = false) List<Long> categoryIds
     ) {
         return recipeRepo.findById(id).map(recipe -> {
             recipe.setName(updatedRecipe.getName());
@@ -61,15 +62,16 @@ public class AdminController {
             recipe.setFullDescription(updatedRecipe.getFullDescription());
             recipe.setImageUrl(updatedRecipe.getImageUrl());
 
-            if (categoryId != null) {
-                categoryRepo.findById(categoryId).ifPresent(recipe::setCategory);
+            if (categoryIds != null && !categoryIds.isEmpty()) {
+                List<Category> categories = categoryRepo.findAllById(categoryIds);
+                recipe.setCategories(new HashSet<>(categories));
             }
 
             return ResponseEntity.ok(recipeRepo.save(recipe));
         }).orElse(ResponseEntity.notFound().build());
     }
 
-    // 🔹 Admin: Delete recipe
+    // 🔹 Delete recipe
     @DeleteMapping("/recipes/{id}")
     public ResponseEntity<Void> deleteRecipe(@PathVariable Long id) {
         if (recipeRepo.existsById(id)) {
@@ -80,7 +82,7 @@ public class AdminController {
         }
     }
 
-    // 🔹 Admin: Get all users
+    // 🔹 Get all users
     @GetMapping("/users")
     public List<User> getAllUsers() {
         return userRepo.findAll();
