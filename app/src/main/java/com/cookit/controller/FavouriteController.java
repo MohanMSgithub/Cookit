@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/favourites")
+@RequestMapping("/api/favourites")
 public class FavouriteController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class FavouriteController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not logged in.");
         }
 
-        Long userId = userDetails.getId();  // Now you have access to the user ID
+        Long userId = userDetails.getId();
 
         boolean added = favouriteService.addToFavourites(recipeId, userId);
 
