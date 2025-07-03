@@ -56,31 +56,42 @@ function createRecipeCard(recipe) {
     }
   });
 
-  // Favorite icon logic
-  const favIcon = card.querySelector(".fav-icon");
-  favIcon.addEventListener("click", async (e) => {
-    e.stopPropagation(); // Prevent modal opening
+  /// Favorite icon logic
+const favIcon = card.querySelector(".fav-icon");
+favIcon.addEventListener("click", async (e) => {
+  e.stopPropagation(); // Prevent modal opening
 
-    const icon = favIcon;
-    const recipeId = icon.dataset.recipeId;
-    const isFavorited = icon.classList.contains("favorited");
+  const icon = favIcon;
+  const recipeId = icon.dataset.recipeId;
+  const isFavorited = icon.classList.contains("favorited");
 
-    try {
-      const response = await fetch(`/api/favourites/${recipeId}`, {
-        method: isFavorited ? "DELETE" : "POST"
-      });
+  const token = localStorage.getItem("token");
 
-      if (response.ok) {
-        icon.classList.toggle("favorited");
-        icon.classList.add("bounce");
-        setTimeout(() => icon.classList.remove("bounce"), 500);
-      } else {
-        console.error("Favourite toggle failed");
+  if (!token) {
+    alert("Please log in to use this feature.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`/api/favourites/${recipeId}`, {
+      method: isFavorited ? "DELETE" : "POST",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json"
       }
-    } catch (err) {
-      console.error("Error:", err);
+    });
+
+    if (response.ok) {
+      icon.classList.toggle("favorited");
+      icon.classList.add("bounce");
+      setTimeout(() => icon.classList.remove("bounce"), 500);
+    } else {
+      console.error("Favourite toggle failed");
     }
-  });
+  } catch (err) {
+    console.error("Error:", err);
+  }
+});
 
   return card;
 }

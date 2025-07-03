@@ -1,178 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta itemprop="name" content="CookIt-website">
-  <meta itemprop="description" content="Self Developed recipe recomendation website build with springboot">
-  <meta itemprop="image" content="...">
-  <title>CookIt - Home</title>
-  <link rel="stylesheet" href="../css/home.css" />
-</head>
-<body>
-  <!-- Header -->
-  <header class="navbar">
-    <div class="logo-area">
-      <img src="../images/logo-cookit.png" alt="CookIt Logo" class="logo"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta itemprop="name" content="CookIt-website" />
+    <meta
+      itemprop="description"
+      content="Self Developed recipe recomendation website build with springboot"
+    />
+    <meta itemprop="image" content="..." />
+    <title>CookIt - Home</title>
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="navbar">
+      <div class="logo-area">
+        <img src="../images/logo-cookit.png" alt="CookIt Logo" class="logo" />
         <div id="search-modal" class="modal-overlay hidden">
-  <div class="modal-content">
-    <button class="modal-close" id="closeSearchModal">✕</button>
-    <h2>Search Results</h2>
-    <div id="search-results" class="recipe-row"></div>
-  </div>
-</div>
+          <div class="modal-content">
+            <button class="modal-close" id="closeSearchModal">✕</button>
+            <h2>Search Results</h2>
+            <div id="search-results" class="recipe-row"></div>
+          </div>
+        </div>
 
+        <a href="home.html" class="site-title">CookIt</a>
+      </div>
+      <input
+        type="text"
+        id="searchInput"
+        class="search-bar"
+        placeholder="Search recipes or ingredients..."
+      />
+      <div class="nav-buttons">
+        <div class="dropdown">
+          <button class="nav-btn">Discover</button>
+          <div class="dropdown-content">
+            <a href="#">Top Recipes</a>
+            <a href="#">Chef’s Picks</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="nav-btn">Meal Plans</button>
+          <div class="dropdown-content">
+            <a href="#">Weekly Plan</a>
+            <a href="#">Custom Plan</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="nav-btn">Share</button>
+          <div class="dropdown-content">
+            <a href="#">Upload Recipe</a>
+            <a href="#">Post Photo</a>
+          </div>
+        </div>
+        <button class="signin-btn">My Recipes</button>
+      </div>
+    </header>
 
-      
-      <a href="home.html" class="site-title">CookIt</a>
-    </div>
-    <input type="text" id="searchInput" class="search-bar" placeholder="Search recipes or ingredients..." />
-     <div class="nav-buttons">
+    <!-- Sub-navigation -->
+    <nav class="sub-nav">
       <div class="dropdown">
-        <button class="nav-btn">Discover</button>
+        <b class="nav-btn">meals</b>
         <div class="dropdown-content">
-          <a href="#">Top Recipes</a>
-          <a href="#">Chef’s Picks</a>
+          <a href="#">Breakfast</a>
+          <a href="#">Lunch</a>
+          <a href="#">Healthy</a>
+          <a href="#">Salads</a>
+          <a href="#">Dinner</a>
+          <a href="#">Drinks</a>
+          <a href="#">Dessert</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <b class="nav-btn">Ingredients</b>
+        <div class="dropdown-content">
+          <a href="#">Chicken</a>
+          <a href="#">Fruits</a>
+          <a href="#">Vegetables</a>
+          <a href="#">Seafood</a>
+          <a href="#">Biryani</a>
+          <a href="#">Dosa</a>
         </div>
       </div>
       <div class="dropdown">
-        <button class="nav-btn">Meal Plans</button>
+        <b class="nav-btn">Cuisines</b>
         <div class="dropdown-content">
-          <a href="#">Weekly Plan</a>
-          <a href="#">Custom Plan</a>
+          <a href="#">North Indian</a>
+          <a href="#">South Indian</a>
+          <a href="#">Punjabi</a>
+          <a href="#">Gujarati</a>
+          <a href="#">Marathi</a>
+          <a href="#">Mexican</a>
+          <a href="#">Italian</a>
+          <a href="#">Chinese</a>
         </div>
       </div>
       <div class="dropdown">
-        <button class="nav-btn">Share</button>
+        <b class="nav-btn">Occasions</b>
         <div class="dropdown-content">
-          <a href="#">Upload Recipe</a>
-          <a href="#">Post Photo</a>
+          <a href="#">Festive</a>
+          <a href="#">Birthday</a>
+          <a href="#">Anniversary</a>
+          <a href="#">Get Together</a>
+          <a href="#">Weekend Treat</a>
+          <a href="#">Quick Snacks</a>
         </div>
       </div>
-      <button class="signin-btn">My Recipes</button>
-    </div>
-  </header>
-
-  <!-- Sub-navigation -->
-  <nav class="sub-nav">
-     
-    <div class="dropdown">
-      <b class="nav-btn">meals</b>
-      <div class="dropdown-content">
-        <a href="#">Breakfast</a>
-        <a href="#">Lunch</a>
-        <a href="#">Healthy</a>
-        <a href="#">Salads</a>
-        <a href="#">Dinner</a>
-        <a href="#">Drinks</a>
-        <a href="#">Dessert</a>
+      <div class="dropdown">
+        <b class="nav-btn">Seasonal</b>
+        <div class="dropdown-content">
+          <a href="#">Summer</a>
+          <a href="#">Winter</a>
+          <a href="#">Rainy</a>
+          <a href="#">Spring</a>
+        </div>
       </div>
-    </div>
-    
-    <div class="dropdown">
-      <b class="nav-btn">Ingredients</b>
-      <div class="dropdown-content">
-        <a href="#">Chicken</a>
-        <a href="#">Fruits</a>
-        <a href="#">Vegetables</a>
-        <a href="#">Seafood</a>
-        <a href="#">Biryani</a>
-        <a href="#">Dosa</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <div class="main-content">
+        <h1 class="title">What’s Cooking?</h1>
+        <h2 class="subtitle">Explore delicious meals from around the world</h2>
+        <p class="description">Your 2025 curated recipe picks by food lovers</p>
       </div>
-    </div>
-    <div class="dropdown">
-      <b class="nav-btn">Cuisines</b>
-      <div class="dropdown-content">
-        <a href="#">North Indian</a>
-        <a href="#">South Indian</a>
-        <a href="#">Punjabi</a>
-        <a href="#">Gujarati</a>
-        <a href="#">Marathi</a>
-        <a href="#">Mexican</a>
-        <a href="#">Italian</a>
-        <a href="#">Chinese</a>
+
+      <!-- User Picks -->
+      <div class="recipe-section" id="popular">
+        <div class="section-header">
+          <h2>Popular Recipes</h2>
+          <button class="view-all">View All</button>
+        </div>
+        <div class="recipe-row" id="popular-recipes">
+          <!-- JavaScript will inject cards here -->
+        </div>
       </div>
-    </div>
-    <div class="dropdown">
-      <b class="nav-btn">Occasions</b>
-      <div class="dropdown-content">
-        <a href="#">Festive</a>
-        <a href="#">Birthday</a>
-        <a href="#">Anniversary</a>
-        <a href="#">Get Together</a>
-        <a href="#">Weekend Treat</a>
-        <a href="#">Quick Snacks</a>
+
+      <div class="recipe-section" id="quick-easy">
+        <div class="section-header">
+          <h2>Quick & Easy Recipes</h2>
+          <button class="view-all">View All</button>
+        </div>
+        <div class="recipe-row" id="quick-recipes">
+          <!-- JavaScript will inject cards here -->
+        </div>
       </div>
-    </div>
-    <div class="dropdown">
-      <b class="nav-btn">Seasonal</b>
-      <div class="dropdown-content">
-        <a href="#">Summer</a>
-        <a href="#">Winter</a>
-        <a href="#">Rainy</a>
-        <a href="#">Spring</a>
+
+      <div class="recipe-section" id="healthy">
+        <div class="section-header">
+          <h2>Healthy Recipes</h2>
+          <button class="view-all">View All</button>
+        </div>
+        <div class="recipe-row" id="healthy-recipes">
+          <!-- JavaScript will inject cards here -->
+        </div>
       </div>
-    </div>
-  </nav>
 
-  <!-- Main Content -->
-  <main >
-    <div class="main-content">
-      <h1 class="title">What’s Cooking?</h1>
-      <h2 class="subtitle">Explore delicious meals from around the world</h2>
-      <p class="description">Your 2025 curated recipe picks by food lovers</p>
-    </div>
+      <!-- 
+  Footer Section for Cookit Website
+  Includes: Logo, Newsletter Form, Categories, Resources, Social Media Links, and Copyright
+-->
 
+      <!-- <section class="banner"> -->
 
-<!-- User Picks -->
-<div class="recipe-section" id="popular">
-  <div class="section-header">
-    <h2>Popular Recipes</h2>
-    <button class="view-all">View All</button>
-  </div>
-  <div class="recipe-row" id="popular-recipes">
-    <!-- JavaScript will inject cards here -->
-  </div>
-</div>
+      <!-- Footer Container -->
+      <!-- <footer class="bg-gray-900 text-white py-12"> -->
 
-<div class="recipe-section" id="quick-easy">
-  <div class="section-header">
-    <h2>Quick & Easy Recipes</h2>
-    <button class="view-all">View All</button>
-  </div>
-  <div class="recipe-row" id="quick-recipes">
-    <!-- JavaScript will inject cards here -->
-  </div>
-</div>
+      <!-- Main Grid Layout with 4 Columns (Responsive) -->
+      <!-- <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8"> -->
 
-<div class="recipe-section" id="healthy">
-  <div class="section-header">
-    <h2>Healthy Recipes</h2>
-    <button class="view-all">View All</button>
-  </div>
-  <div class="recipe-row" id="healthy-recipes">
-    <!-- JavaScript will inject cards here -->
-  </div>
-</div>
-
-
-
-<!-- Banner -->
-<!-- <section class="banner">
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-      <!-- Logo & Newsletter -->
-      <div>
+      <!-- Logo & Newsletter Signup -->
+      <!-- <div>
         <h2 class="text-2xl font-bold text-orange-400 mb-4">Cookit 🍽️</h2>
-        <p class="mb-4 text-gray-300">Delicious recipes, cooking tips, and more—straight to your inbox.</p>
+        <p class="mb-4 text-gray-300">
+          Delicious recipes, cooking tips, and more—straight to your inbox.
+        </p>
         <form class="flex">
           <input type="email" placeholder="Your email" class="p-2 rounded-l-md text-black focus:outline-none" />
           <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-r-md">Subscribe</button>
         </form>
-      </div>
-  
-      <!-- Categories -->
-      <div>
+      </div> -->
+
+      <!-- Recipe Categories Links -->
+      <!-- <div>
         <h3 class="text-lg font-semibold mb-4">Recipes</h3>
         <ul class="space-y-2 text-gray-300">
           <li><a href="#" class="hover:text-white">Breakfast</a></li>
@@ -180,10 +193,10 @@
           <li><a href="#" class="hover:text-white">Dinner</a></li>
           <li><a href="#" class="hover:text-white">Desserts</a></li>
         </ul>
-      </div>
-  
-      <!-- Resources -->
-      <div>
+      </div> -->
+
+      <!-- Additional Resources -->
+      <!-- <div>
         <h3 class="text-lg font-semibold mb-4">Resources</h3>
         <ul class="space-y-2 text-gray-300">
           <li><a href="#" class="hover:text-white">About Us</a></li>
@@ -191,10 +204,10 @@
           <li><a href="#" class="hover:text-white">Terms of Service</a></li>
           <li><a href="#" class="hover:text-white">Contact</a></li>
         </ul>
-      </div>
-  
-      <!-- Social Media -->
-      <div>
+      </div> -->
+
+      <!-- Social Media Icons -->
+      <!-- <div>
         <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
         <div class="flex space-x-4">
           <a href="#" aria-label="Facebook" class="hover:text-orange-400">📘</a>
@@ -202,20 +215,20 @@
           <a href="#" aria-label="YouTube" class="hover:text-orange-400">📺</a>
           <a href="#" aria-label="TikTok" class="hover:text-orange-400">🎵</a>
         </div>
-      </div>
-    </div>
-  
-    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
+      </div> -->
+
+      <!-- </div> -->
+
+      <!-- Footer Bottom Text -->
+      <!-- <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
       © 2025 Cookit. All rights reserved.
-    </div>
-  </footer>
-  
-</section> -->
-    
-  </main>
-  
+    </div> -->
 
+      <!-- </footer> -->
 
-  <script src="../js/home.js"></script>
-</body>
+      <!-- </section> -->
+    </main>
+
+    <script src="../js/home.js"></script>
+  </body>
 </html>
