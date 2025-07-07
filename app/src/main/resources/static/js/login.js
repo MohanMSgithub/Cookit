@@ -1,28 +1,22 @@
 document.getElementById("loginForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const credentials = {
+  const response = await fetch('https://cookit-e97n.onrender.com/api/users/do-login', {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
     email: document.getElementById("emailOrPhone").value.trim(),
-    password: document.getElementById("password").value.trim(),
-  };
+    password: document.getElementById("password").value.trim()
+  }),
+});
 
-  try {
-    const response = await fetch('https://cookit-e97n.onrender.com/api/users/do-login', {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(credentials),
-    });
+const data = await response.json();
 
-    const message = await response.text();
+if (response.ok && data.token && data.redirectUrl) {
+  localStorage.setItem("token", data.token); // ✅ Save token
+  window.location.href = data.redirectUrl;
+} else {
+  alert("Login failed: " + (data.error || "Unknown error"));
+}
 
-    if (response.ok && message.includes(".html")) {
-      // login successful, redirect
-      window.location.href = message;
-    } else {
-      alert("Login failed: " + message);
-    }
-  } catch (error) {
-    console.error("Login error:", error);
-    alert("Server error. Try again later.");
-  }
 });

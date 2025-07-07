@@ -37,6 +37,11 @@ dependencies {
     // mySQL Connector (REQUIRED)
     implementation 'mysql:mysql-connector-java:8.0.33'
 
+    //Redis Dependency
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+
+
 
     // Lombokgit
     compileOnly 'org.projectlombok:lombok'
