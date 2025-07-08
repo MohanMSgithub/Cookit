@@ -39,15 +39,18 @@ function createRecipeCard(recipe) {
   const favClass = recipe.isFavourite || recipe.favorited ? "favorited" : "";
 
   card.innerHTML = `
-    <img src="${recipe.imageUrl}" alt="${recipe.name}" class="recipe-img" />
-    <div class="recipe-info">
-      <h3 class="recipe-title">${recipe.name}</h3>
-      <p class="recipe-desc">${recipe.shortDescription}</p>
-      <span class="fav-icon ${favClass}" data-recipe-id="${recipe.id}">
-        <img src="/images/icons8-favorite-48.png" alt="Favorite" />
-      </span>
+    <div class="relative h-full">
+      <img src="${recipe.imageUrl}" alt="${recipe.name}" class="recipe-img h-48 w-full object-cover rounded-t-xl" />
+      <div class="recipe-info p-4 flex flex-col justify-between h-[calc(100%-12rem)]">
+        <h3 class="recipe-title text-lg font-semibold mb-1">${recipe.name}</h3>
+        <p class="recipe-desc text-sm text-gray-600 line-clamp-2">${recipe.shortDescription}</p>
+        <span class="fav-icon absolute top-2 right-2 ${favClass}" data-recipe-id="${recipe.id}">
+          <img src="/images/icons8-favorite-48.png" alt="Favorite" class="w-6 h-6" />
+        </span>
+      </div>
     </div>
   `;
+
 
   // Open recipe modal on card click (excluding fav icon)
   card.addEventListener("click", (e) => {
@@ -103,16 +106,22 @@ function showRecipeModal(recipe) {
   if (!modal) {
     modal = document.createElement("div");
     modal.id = "recipe-modal";
-    modal.className = "modal-overlay";
+    modal.className = `
+      fixed inset-0 z-50 hidden items-center justify-center 
+      bg-black/60 backdrop-blur-sm
+    `;
+
     modal.innerHTML = `
-      <div class="modal-content">
-        <button class="modal-close">✕</button>
-        <img src="" alt="Recipe Image" class="modal-img"/>
-        <h2></h2>
-        <pre></pre>
+      <div class="relative bg-white rounded-xl p-6 max-w-2xl w-[90%] max-h-[80vh] overflow-y-auto shadow-xl">
+        <button class="absolute top-2 right-3 text-xl font-bold text-gray-500 hover:text-black modal-close">✕</button>
+        <img src="" alt="Recipe Image" class="w-full h-60 object-cover rounded-md mb-4 modal-img" />
+        <h2 class="text-2xl font-semibold mb-2"></h2>
+        <pre class="whitespace-pre-wrap text-gray-700"></pre>
       </div>
     `;
-    document.body.appendChild(modal);
+
+    const root = document.getElementById("modal-root") || document.body;
+    root.appendChild(modal);
   }
 
   // Update modal content
@@ -124,18 +133,31 @@ function showRecipeModal(recipe) {
     imgEl.src = recipe.imageUrl;
     titleEl.textContent = recipe.name;
     descEl.textContent = recipe.fullDescription;
-  } else {
-    console.error("Modal inner elements not found.");
   }
 
-  modal.style.display = "flex";
-  document.body.classList.add("blur-background");
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+  document.body.classList.add("overflow-hidden");
 
+  // Close button
   modal.querySelector(".modal-close").addEventListener("click", () => {
-    modal.style.display = "none";
-    document.body.classList.remove("blur-background");
+    closeModal(modal);
+  });
+
+  // Close on outside click
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal(modal);
+    }
   });
 }
+
+function closeModal(modal) {
+  modal.classList.remove("flex");
+  modal.classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
+}
+
 
 // Update padding for sticky nav
 function updateMainPadding() {
