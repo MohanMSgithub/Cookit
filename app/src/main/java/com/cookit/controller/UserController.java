@@ -2,9 +2,11 @@ package com.cookit.controller;
 
 import com.cookit.model.User;
 import com.cookit.service.UserService;
+import com.cookit.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.Map;
 
@@ -12,6 +14,8 @@ import java.util.Map;
 @RequestMapping("/api/users")
 @CrossOrigin(origins = "*")
 public class UserController {
+    @Autowired
+    private JwtUtil jwtUtil;
 
     @Autowired
     private UserService userService;
@@ -26,11 +30,24 @@ public class UserController {
         }
     }
 
-    // Login with JSON body
     @PostMapping("/do-login")
-    public String doLogin(@RequestBody User loginRequest) {
-        return userService.login(loginRequest.getEmail(), loginRequest.getPassword());
+    public ResponseEntity<?> doLogin(@RequestBody User loginRequest) {
+        String result = userService.login(loginRequest.getEmail(), loginRequest.getPassword());
+
+        if ("/html/home.html".equals(result)) {
+            // ✅ Generate JWT
+            String token = jwtUtil.generateToken(loginRequest.getEmail());
+
+            return ResponseEntity.ok(Map.of(
+                    "token", token,
+                    "redirectUrl", result
+            ));
+        } else {
+            return ResponseEntity.status(401).body(Map.of("error", result));
+        }
     }
+
+
 
     @PostMapping("/forgot-password")
     public String forgotPassword(@RequestBody User request) {
