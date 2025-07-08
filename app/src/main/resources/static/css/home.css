@@ -87,3 +87,26 @@ button.view-all:hover {
 .hidden {
   display: none !important;
 }
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  padding: 1.5rem;
+  background: white;
+  color: black;
+  border-radius: 1rem;
+  overflow-y: auto;
+  max-height: 80vh;
+  animation: fadeInUp 0.3s ease-in-out;
+}

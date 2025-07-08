@@ -183,14 +183,8 @@ function searchRecipes() {
       return res.json();
     })
     .then(data => {
-      console.log("Search results:", data); // 🔍 Check if anything is returned
-
-      const modal = document.getElementById("search-modal");
+      const resultsSection = document.getElementById("search-results-section");
       const resultsContainer = document.getElementById("search-results");
-      if (!resultsContainer) {
-        console.error("❌ search-results container not found!");
-        return;
-      }
 
       resultsContainer.innerHTML = '';
 
@@ -198,14 +192,14 @@ function searchRecipes() {
         resultsContainer.innerHTML = "<p>No recipes found.</p>";
       } else {
         data.forEach(recipe => {
-          console.log("Adding recipe:", recipe); // Check what you get
-          const card = createRecipeCard(recipe);
+          const card = createRecipeCard(recipe);  // Uses existing modal logic
           resultsContainer.appendChild(card);
         });
       }
 
-      modal.classList.remove("hidden");
-      document.body.classList.add("blur-background");
+      resultsSection.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+
     })
     .catch(err => {
       console.error("Search error:", err);
@@ -213,16 +207,9 @@ function searchRecipes() {
 }
 
 document.getElementById("closeSearchModal").addEventListener("click", () => {
-  document.getElementById("search-modal").classList.add("hidden");
-  document.body.classList.remove("blurred");
+  document.getElementById("search-results-section").classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
 });
-document.getElementById("searchInput").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    searchRecipes();
-  }
-});
-
 
 window.addEventListener("DOMContentLoaded", updateMainPadding);
 window.addEventListener("resize", updateMainPadding);
