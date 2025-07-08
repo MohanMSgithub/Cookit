@@ -130,35 +130,40 @@
 
   <!-- Recipe Sections -->
   <div class="space-y-12">
-    <section class="text-white">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-xl font-semibold">Popular Recipes</h2>
-        <button class="text-blue-500 hover:underline">View All</button>
-      </div>
-      <div id="popular-recipes" class="flex gap-4 overflow-x-auto pb-4">
-        <!-- JS injects cards -->
-      </div>
-    </section>
+        <section class="text-white recipe-section">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold">Popular Recipes</h2>
+          <button class="text-blue-500 hover:underline view-all">View All</button>
+        </div>
+        <div id="popular-recipes" class="recipe-row flex gap-4 overflow-x-auto pb-4">
+          <!-- JS injects cards -->
+        </div>
+      </section>
 
-    <section class="text-white">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-xl font-semibold">Quick & Easy Recipes</h2>
-        <button class="text-blue-500 hover:underline">View All</button>
-      </div>
-      <div id="quick-recipes" class="flex gap-4 overflow-x-auto pb-4">
-        <!-- JS injects cards -->
-      </div>
-    </section>
+        
+        
 
-    <section class="text-white">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-xl font-semibold">Healthy Recipes</h2>
-        <button class="text-blue-500 hover:underline">View All</button>
-      </div>
-      <div id="healthy-recipes" class="flex gap-4 overflow-x-auto pb-4">
-        <!-- JS injects cards -->
-      </div>
-    </section>
+        <section class="text-white recipe-section">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold">Quick & Easy Recipes</h2>
+            <button class="text-blue-500 hover:underline view-all">View All</button>
+          </div>
+          <div id="quick-recipes" class="recipe-row flex gap-4 overflow-x-auto pb-4">
+            <!-- JS injects cards -->
+          </div>
+        </section>
+            
+            
+      <section class="text-white recipe-section">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold">Healthy Recipes</h2>
+          <button class="text-blue-500 hover:underline view-all">View All</button>
+        </div>
+        <div id="healthy-recipes" class="recipe-row flex gap-4 overflow-x-auto pb-4">
+          <!-- JS injects cards -->
+        </div>
+      </section>
+
   </div>
   <section id="search-results-section" class="hidden fixed inset-0 z-40 bg-black/70 backdrop-blur-sm p-6 overflow-y-auto">
     <div class="max-w-5xl mx-auto bg-white rounded-xl p-4 text-black shadow-lg">

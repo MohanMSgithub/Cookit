@@ -6,16 +6,83 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   categories.forEach(cat => {
-    fetchRecipes(cat.name, cat.id)  ;
+    fetchRecipes(cat.name, cat.id);
   });
 
+  // 🔥 Add "View All" modal logic here
   document.querySelectorAll(".view-all").forEach(button => {
-    button.addEventListener("click", () => {
-      const section = button.closest(".recipe-section");
-      section.querySelector(".recipe-row").classList.add("view-all-active");
+    button.addEventListener("click", async () => {
+      const section = button.closest("section");
+      const title = section.querySelector("h2")?.textContent;
+      const containerId = section.querySelector(".recipe-row")?.id;
+
+      if (!containerId) return;
+
+      const modal = document.getElementById("viewAll-modal");
+      const modalTitle = document.getElementById("viewAllTitle");
+      const modalContainer = document.getElementById("viewAllContainer");
+
+      modalTitle.textContent = title || "Recipes";
+      modalContainer.innerHTML = "";
+
+      try {
+        const res = await fetch(`/api/recipes?category=${encodeURIComponent(title)}`);
+        if (!res.ok) throw new Error("Failed to fetch");
+
+        const data = await res.json();
+        data.forEach(recipe => {
+          const card = createRecipeCard(recipe);
+          modalContainer.appendChild(card);
+        });
+
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.body.classList.add("overflow-hidden");
+
+      } catch (err) {
+        console.error("View All modal error:", err);
+      }
     });
   });
+
+  // ❌ Don't forget the close button listener
+  const closeBtn = document.getElementById("closeViewAll");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      const modal = document.getElementById("viewAll-modal");
+      modal.classList.remove("flex");
+      modal.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    });
+  }
+
+  // 🔍 Search bar enter key handler
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput) {
+    searchInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        searchRecipes();
+      }
+    });
+  }
+
+  // 🧹 Close search modal
+  const searchClose = document.getElementById("closeSearchModal");
+  if (searchClose) {
+    searchClose.addEventListener("click", () => {
+      document.getElementById("search-results-section").classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    });
+  }
+
+  // 🧱 Update nav padding
+  updateMainPadding();
+  window.addEventListener("resize", updateMainPadding);
 });
+
+
+
 
 // Fetch and display recipes
 function fetchRecipes(category, containerId) {
@@ -99,7 +166,7 @@ favIcon.addEventListener("click", async (e) => {
   return card;
 }
 
-// Show full recipe modal// Show full recipe modal
+// Show full recipe modal
 function showRecipeModal(recipe) {
   let modal = document.getElementById("recipe-modal");
 

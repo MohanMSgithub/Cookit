@@ -110,3 +110,8 @@ button.view-all:hover {
   max-height: 80vh;
   animation: fadeInUp 0.3s ease-in-out;
 }
+ .recipe-card {
+    min-width: 22rem; /* Tailwind sm: ~352px */
+    max-width: 22rem;
+    flex-shrink: 0;
+    scroll-snap-align: start;}
