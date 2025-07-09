@@ -75,6 +75,18 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.remove("overflow-hidden");
     });
   }
+  const searchResultsSection = document.getElementById("search-results-section");
+
+if (searchResultsSection) {
+  searchResultsSection.addEventListener("click", (e) => {
+    const contentBox = searchResultsSection.querySelector("div"); // The white box
+    if (!contentBox.contains(e.target)) {
+      searchResultsSection.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    }
+  });
+}
+
 
   // 🧱 Update nav padding
   updateMainPadding();
